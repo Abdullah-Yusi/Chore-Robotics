@@ -1,0 +1,43 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to server
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ vars.DEPLOY_HOST }}
+          username: ${{ vars.DEPLOY_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ vars.DEPLOY_PORT || 22 }}
+          script: |
+            set -e
+            cd ${{ vars.DEPLOY_PATH }}
+
+            git fetch origin main
+            git reset --hard origin/main
+
+            corepack enable
+            pnpm install --frozen-lockfile
+            pnpm run build
+
+            if pm2 describe chore-web > /dev/null 2>&1; then
+              pm2 restart chore-web
+            else
+              pm2 start pnpm --name chore-web -- start
+            fi
+
+            pm2 save

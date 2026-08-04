@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { aboutPage, type AboutSection } from "@/data/about";
+import { aboutPage, type AboutSection, type AboutSectionWithVideo } from "@/data/about";
 import { useInView } from "@/hooks/useInView";
 import AboutTimelineVideo from "@/components/about/AboutTimelineVideo";
 
@@ -59,7 +59,7 @@ function SectionText({
   );
 }
 
-function hasSectionVideo(section: AboutSection): boolean {
+function hasSectionVideo(section: AboutSection): section is AboutSectionWithVideo {
   return "video" in section && Boolean(section.video);
 }
 

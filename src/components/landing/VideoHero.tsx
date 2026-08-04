@@ -63,7 +63,9 @@ export default function VideoHero() {
             <span
               key={line.text}
               className={`block ${
-                isPrimarySlide && line.accent ? "text-[#ff8400]" : "text-white"
+                isPrimarySlide && "accent" in line && line.accent
+                  ? "text-[#ff8400]"
+                  : "text-white"
               }`}
             >
               {line.text}

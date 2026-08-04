@@ -97,3 +97,8 @@ export const aboutPage = {
 } as const;
 
 export type AboutSection = (typeof aboutPage.sections)[number];
+
+export type AboutSectionWithVideo = Extract<
+  AboutSection,
+  { video: string | null }
+>;

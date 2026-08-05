@@ -11,40 +11,40 @@ export default function LandingTechnologyPreviewSection() {
   return (
     <section
       ref={ref}
-      className={`border-t border-white/10 bg-background px-6 py-20 lg:px-10 lg:py-28 ${
+      className={`border-t border-border bg-background px-4 py-14 sm:px-6 sm:py-20 lg:px-10 lg:py-28 2xl:px-16 ${
         isVisible ? "reveal is-visible" : "reveal"
       }`}
     >
-      <div className="mx-auto max-w-[1440px]">
+      <div className="landing-container">
         <div className="mb-10 lg:mb-12">
-          <p className="font-body text-[11px] font-bold uppercase tracking-[0.24em] text-[#ff8400]">
+          <p className="font-body text-[11px] font-bold uppercase tracking-[0.24em] text-orange">
             {landingTechnologyPreview.eyebrow}
           </p>
-          <h2 className="mt-2 whitespace-nowrap font-heading text-[clamp(1.75rem,3.5vw,2.5rem)] font-semibold leading-tight text-white">
+          <h2 className="mt-2 font-heading text-[clamp(1.25rem,3.5vw,2.5rem)] font-semibold leading-tight text-foreground sm:whitespace-nowrap sm:text-[clamp(1.75rem,3.5vw,2.5rem)]">
             {landingTechnologyPreview.title}
           </h2>
-          <h2 className="mt-1 font-heading text-[clamp(1.75rem,3.5vw,2.5rem)] font-semibold leading-tight text-white">
+          <h2 className="mt-1 font-heading text-[clamp(1.25rem,3.5vw,2.5rem)] font-semibold leading-tight text-foreground sm:text-[clamp(1.75rem,3.5vw,2.5rem)]">
             {landingTechnologyPreview.titleLine2}
           </h2>
         </div>
 
         <div
-          className="relative overflow-hidden rounded-2xl border border-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.45)]"
+          className="relative overflow-hidden rounded-2xl border border-border shadow-[0_24px_80px_rgba(0,0,0,0.12)] dark:shadow-[0_24px_80px_rgba(0,0,0,0.45)]"
           style={{ transitionDelay: "80ms" }}
         >
-          <div className="relative aspect-[16/10] min-h-[320px] w-full sm:min-h-[400px] lg:aspect-[21/9] lg:min-h-[440px]">
+          <div className="relative aspect-[16/10] min-h-[280px] w-full sm:min-h-[400px] lg:aspect-[21/9] lg:min-h-[440px]">
             <Image
               src={technologySection.image}
               alt={technologySection.imageAlt}
               fill
               className="object-cover object-center"
-              sizes="(max-width: 1440px) 100vw, 1440px"
+              sizes="(max-width: 2400px) 100vw, 2400px"
             />
 
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#161616]/92 via-[#161616]/50 to-transparent" />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#161616]/60 via-transparent to-[#161616]/20" />
 
-            <div className="absolute inset-0 flex items-end p-6 sm:p-10 lg:p-12">
+            <div className="absolute inset-0 flex items-end p-4 sm:p-10 lg:p-12">
               <div className="max-w-lg">
                 <span className="inline-flex items-center rounded-full border border-[#ff8400]/35 bg-[#ff8400]/10 px-3 py-1 font-body text-[10px] font-bold uppercase tracking-[0.18em] text-[#ff8400] backdrop-blur-sm">
                   {technologySection.tag}

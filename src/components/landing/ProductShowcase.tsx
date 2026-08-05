@@ -12,19 +12,19 @@ export default function ProductShowcase() {
     <section
       ref={ref}
       id="products"
-      className={`bg-background px-6 py-16 lg:px-10 lg:py-24 ${
+      className={`bg-background px-4 py-10 sm:px-6 sm:py-16 lg:px-10 lg:py-24 ${
         isVisible ? "reveal is-visible" : "reveal"
       }`}
     >
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-12 max-w-2xl">
-          <p className="font-body text-[11px] font-bold uppercase tracking-[0.24em] text-[#ff8400]">
+          <p className="font-body text-[11px] font-bold uppercase tracking-[0.24em] text-orange">
             Modular Attachments
           </p>
-          <h1 className="mt-2 font-heading text-[clamp(1.75rem,3.5vw,2.75rem)] font-semibold uppercase tracking-[0.03em] text-white">
+          <h1 className="mt-2 font-heading text-[clamp(1.75rem,3.5vw,2.75rem)] font-semibold uppercase tracking-[0.03em] text-foreground">
             CHORE Products
           </h1>
-          <p className="mt-3 font-body text-[15px] leading-relaxed text-white/55 sm:text-base">
+          <p className="mt-3 font-body text-[15px] leading-relaxed text-muted sm:text-base">
             One platform, every chore — explore our modular attachments.
           </p>
         </div>
@@ -35,10 +35,10 @@ export default function ProductShowcase() {
               key={product.id}
               href={product.href}
               id={product.id}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[var(--surface-elevated)] transition-all duration-300 hover:border-[#ff8400]/35"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface-elevated transition-all duration-300 hover:border-orange/35"
               style={{ transitionDelay: `${index * 40}ms` }}
             >
-              <div className="relative aspect-[4/3] bg-gradient-to-br from-[#222] via-[#1a1a1a] to-[#121212]">
+              <div className="relative aspect-[4/3] bg-gradient-to-br from-[var(--gallery-from)] via-[var(--gallery-via)] to-[var(--gallery-to)]">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -47,14 +47,14 @@ export default function ProductShowcase() {
                   sizes="(max-width: 1024px) 50vw, 33vw"
                 />
               </div>
-              <div className="border-t border-white/8 p-5">
-                <p className="font-body text-[10px] font-bold uppercase tracking-[0.16em] text-[#ff8400]">
+              <div className="border-t border-border p-5">
+                <p className="font-body text-[10px] font-bold uppercase tracking-[0.16em] text-orange">
                   {product.category}
                 </p>
-                <h2 className="mt-2 font-heading text-lg font-semibold uppercase tracking-[0.03em] text-white transition-colors group-hover:text-[#ff8400]">
+                <h2 className="mt-2 font-heading text-lg font-semibold uppercase tracking-[0.03em] text-foreground transition-colors group-hover:text-orange">
                   {product.name}
                 </h2>
-                <p className="mt-2 font-body text-[13px] leading-relaxed text-white/50">
+                <p className="mt-2 font-body text-[13px] leading-relaxed text-subtle">
                   {product.tagline}
                 </p>
               </div>

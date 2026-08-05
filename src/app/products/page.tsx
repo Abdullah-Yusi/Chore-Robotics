@@ -6,7 +6,7 @@ export default function ProductsPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-background pt-[72px]">
+      <main className="bg-background pt-[88px]">
         <ProductShowcase />
       </main>
       <Footer />

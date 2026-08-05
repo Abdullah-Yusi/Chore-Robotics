@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="bg-background pt-[72px]">
+      <main className="bg-background">
         <VideoHero />
         <LandingProductsSection />
         <LandingTechnologyPreviewSection />

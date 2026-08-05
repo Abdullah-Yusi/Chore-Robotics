@@ -28,7 +28,7 @@ export default function VideoHero() {
   return (
     <section
       id="hero"
-      className="relative flex w-full items-end overflow-hidden bg-background h-[clamp(280px,54vw,460px)] sm:h-[clamp(440px,72vh,100svh)] sm:min-h-[520px] lg:h-screen lg:min-h-[560px]"
+      className="relative flex w-full items-end overflow-hidden bg-background h-[clamp(320px,58vw,460px)] sm:h-[clamp(440px,72vh,100svh)] sm:min-h-[520px] lg:h-screen lg:min-h-[560px]"
       aria-roledescription="carousel"
       aria-label="CHORE product highlights"
     >
@@ -45,8 +45,9 @@ export default function VideoHero() {
             alt={item.alt}
             fill
             priority={index === 0}
+            quality={80}
             className={item.imageClassName}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+            sizes="100vw"
           />
         </div>
       ))}
@@ -54,17 +55,17 @@ export default function VideoHero() {
       <div className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-t from-black/75 via-black/25 to-black/35 sm:from-black/70 sm:via-black/20 sm:to-black/30" />
       <div className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-b from-black/45 via-transparent to-transparent sm:from-black/40" />
 
-      <div className="pointer-events-none absolute inset-0 z-[4] flex items-center justify-center px-4 pb-24 pt-16 sm:translate-y-[4%] sm:px-6 sm:pb-0 sm:pt-0 lg:translate-y-[6%] lg:px-16">
+      <div className="pointer-events-none absolute inset-0 z-[4] flex items-center justify-center px-4 pb-20 pt-12 sm:translate-y-[4%] sm:px-6 sm:pb-0 sm:pt-0 lg:translate-y-[6%] lg:px-16">
         <h1
           key={slide.id}
-          className="showcase-text-enter hero-slide-headline text-center font-heading text-[clamp(1.65rem,7.5vw,4.5rem)] font-bold uppercase leading-[1.05] tracking-[0.03em] sm:text-[clamp(2rem,5.5vw,4.5rem)] sm:leading-[1.02]"
+          className="showcase-text-enter hero-slide-headline text-center font-heading text-[clamp(1.4rem,6.5vw,4.5rem)] font-bold uppercase leading-[1.05] tracking-[0.03em] sm:text-[clamp(2rem,5.5vw,4.5rem)] sm:leading-[1.02]"
         >
           {slide.headline.lines.map((line) => (
             <span
               key={line.text}
               className={`block ${
                 isPrimarySlide && "accent" in line && line.accent
-                  ? "text-[#ff8400]"
+                  ? "text-orange"
                   : "text-white"
               }`}
             >

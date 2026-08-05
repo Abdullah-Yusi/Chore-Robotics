@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import AboutContent from "@/components/about/AboutContent";
 import AboutHero from "@/components/about/AboutHero";
+import AboutMissionVision from "@/components/about/AboutMissionVision";
 import Footer from "@/components/landing/Footer";
 import Navbar from "@/components/Navbar";
 
@@ -14,11 +15,12 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-background pt-[72px]">
+      <main className="bg-background pt-[88px]">
         <AboutHero />
+        <AboutMissionVision />
         <AboutContent />
       </main>
-      <Footer />
+      <Footer showAddress />
     </>
   );
 }

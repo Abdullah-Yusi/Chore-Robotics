@@ -16,11 +16,9 @@ import {
 } from "@/data/reservation";
 import { useInView } from "@/hooks/useInView";
 
-const inputClassName =
-  "w-full rounded-xl border border-white/12 bg-[#121212] px-4 py-3.5 font-body text-[15px] text-white placeholder:text-white/30 transition-all focus:border-[#ff8400]/60 focus:bg-[#141414] focus:outline-none focus:ring-2 focus:ring-[#ff8400]/15";
+const inputClassName = "form-input";
 
-const labelClassName =
-  "mb-2 block font-body text-[11px] font-bold uppercase tracking-[0.18em] text-white/55";
+const labelClassName = "form-label";
 
 const initialFormState: ReservationFormData = {
   fullName: "",
@@ -97,13 +95,13 @@ export default function ReservationForm() {
     return (
       <div
         ref={ref}
-        className={`rounded-2xl border border-white/10 bg-[var(--surface-elevated)] p-8 text-center sm:p-12 ${
+        className={`rounded-2xl border border-border bg-surface-elevated p-8 text-center sm:p-12 ${
           isVisible ? "reveal is-visible" : "reveal"
         }`}
       >
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[#ff8400]/30 bg-[#ff8400]/10">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-orange/30 bg-orange/10">
           <svg
-            className="h-8 w-8 text-[#ff8400]"
+            className="h-8 w-8 text-orange"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -113,15 +111,15 @@ export default function ReservationForm() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 className="mt-6 font-heading text-[clamp(1.5rem,3vw,2rem)] font-semibold uppercase tracking-[0.03em] text-white">
+        <h2 className="mt-6 font-heading text-[clamp(1.5rem,3vw,2rem)] font-semibold uppercase tracking-[0.03em] text-foreground">
           {reservationPage.successTitle}
         </h2>
-        <p className="mx-auto mt-4 max-w-md font-body text-[15px] leading-relaxed text-white/60">
+        <p className="mx-auto mt-4 max-w-md font-body text-[15px] leading-relaxed text-muted">
           {reservationPage.successDescription}
         </p>
-        <p className="mt-6 font-body text-sm text-white/45">
+        <p className="mt-6 font-body text-sm text-subtle">
           Confirmation sent to{" "}
-          <span className="font-semibold text-white/80">{form.email}</span>
+          <span className="font-semibold text-foreground">{form.email}</span>
         </p>
       </div>
     );
@@ -130,13 +128,13 @@ export default function ReservationForm() {
   return (
     <div
       ref={ref}
-      className={`rounded-2xl border border-white/10 bg-[var(--surface-elevated)] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:p-8 lg:p-10 ${
+      className={`rounded-2xl border border-border bg-surface-elevated p-6 shadow-[0_24px_80px_rgba(0,0,0,0.08)] dark:shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:p-8 lg:p-10 ${
         isVisible ? "reveal is-visible" : "reveal"
       }`}
     >
       <form onSubmit={handleSubmit} className="space-y-8" noValidate>
         <div>
-          <p className="font-body text-[11px] font-bold uppercase tracking-[0.22em] text-[#ff8400]">
+          <p className="font-body text-[11px] font-bold uppercase tracking-[0.22em] text-orange">
             Contact Information
           </p>
           <div className="mt-5 grid gap-5 sm:grid-cols-2">
@@ -154,7 +152,7 @@ export default function ReservationForm() {
                 className={`${inputClassName} uppercase tracking-[0.04em]`}
               />
               {errors.fullName ? (
-                <p className="mt-2 font-body text-xs text-[#ff8400]">{errors.fullName}</p>
+                <p className="mt-2 font-body text-xs text-orange">{errors.fullName}</p>
               ) : null}
             </div>
 
@@ -172,7 +170,7 @@ export default function ReservationForm() {
                 className={inputClassName}
               />
               {errors.email ? (
-                <p className="mt-2 font-body text-xs text-[#ff8400]">{errors.email}</p>
+                <p className="mt-2 font-body text-xs text-orange">{errors.email}</p>
               ) : null}
             </div>
 
@@ -193,14 +191,14 @@ export default function ReservationForm() {
                 className={inputClassName}
               />
               {errors.phone ? (
-                <p className="mt-2 font-body text-xs text-[#ff8400]">{errors.phone}</p>
+                <p className="mt-2 font-body text-xs text-orange">{errors.phone}</p>
               ) : null}
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/8 pt-8">
-          <p className="font-body text-[11px] font-bold uppercase tracking-[0.22em] text-[#ff8400]">
+        <div className="border-t border-border pt-8">
+          <p className="font-body text-[11px] font-bold uppercase tracking-[0.22em] text-orange">
             US Shipping Address
           </p>
           <div className="mt-5 grid gap-5 sm:grid-cols-2">
@@ -218,7 +216,7 @@ export default function ReservationForm() {
                 className={inputClassName}
               />
               {errors.streetAddress ? (
-                <p className="mt-2 font-body text-xs text-[#ff8400]">{errors.streetAddress}</p>
+                <p className="mt-2 font-body text-xs text-orange">{errors.streetAddress}</p>
               ) : null}
             </div>
 
@@ -251,7 +249,7 @@ export default function ReservationForm() {
                 className={inputClassName}
               />
               {errors.city ? (
-                <p className="mt-2 font-body text-xs text-[#ff8400]">{errors.city}</p>
+                <p className="mt-2 font-body text-xs text-orange">{errors.city}</p>
               ) : null}
             </div>
 
@@ -270,13 +268,13 @@ export default function ReservationForm() {
                   Select state
                 </option>
                 {US_STATES.map((state) => (
-                  <option key={state.value} value={state.value} className="bg-[#161616]">
+                  <option key={state.value} value={state.value} className="bg-surface-elevated text-foreground">
                     {state.label}
                   </option>
                 ))}
               </select>
               {errors.state ? (
-                <p className="mt-2 font-body text-xs text-[#ff8400]">{errors.state}</p>
+                <p className="mt-2 font-body text-xs text-orange">{errors.state}</p>
               ) : null}
             </div>
 
@@ -297,14 +295,14 @@ export default function ReservationForm() {
                 className={inputClassName}
               />
               {errors.zipCode ? (
-                <p className="mt-2 font-body text-xs text-[#ff8400]">{errors.zipCode}</p>
+                <p className="mt-2 font-body text-xs text-orange">{errors.zipCode}</p>
               ) : null}
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/8 pt-8">
-          <p className="font-body text-[11px] font-bold uppercase tracking-[0.22em] text-[#ff8400]">
+        <div className="border-t border-border pt-8">
+          <p className="font-body text-[11px] font-bold uppercase tracking-[0.22em] text-orange">
             Product Selection
           </p>
           <div className="mt-5">
@@ -318,19 +316,19 @@ export default function ReservationForm() {
               className={`${inputClassName} cursor-pointer appearance-none`}
             >
               {reservationProducts.map((product) => (
-                <option key={product.id} value={product.slug} className="bg-[#161616]">
+                <option key={product.id} value={product.slug} className="bg-surface-elevated text-foreground">
                   {product.name} · {product.category}
                 </option>
               ))}
             </select>
             {errors.productSlug ? (
-              <p className="mt-2 font-body text-xs text-[#ff8400]">{errors.productSlug}</p>
+              <p className="mt-2 font-body text-xs text-orange">{errors.productSlug}</p>
             ) : null}
           </div>
         </div>
 
-        <div className="border-t border-white/8 pt-8">
-          <p className="font-body text-xs leading-relaxed text-white/45">
+        <div className="border-t border-border pt-8">
+          <p className="font-body text-xs leading-relaxed text-subtle">
             {reservationPage.depositNote}
           </p>
           <button
@@ -340,7 +338,7 @@ export default function ReservationForm() {
           >
             {isSubmitting ? (
               <span className="inline-flex items-center gap-2">
-                <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                <span className="h-4 w-4 animate-spin rounded-full border-2 border-foreground/30 border-t-foreground" />
                 Submitting…
               </span>
             ) : (

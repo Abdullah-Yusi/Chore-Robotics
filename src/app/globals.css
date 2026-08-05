@@ -1,25 +1,105 @@
 @import "tailwindcss";
 
-:root {
+/* Class-based dark/light mode for next-themes */
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
+
+/* Dark (default) — industrial CHORE theme */
+:root,
+.dark {
   --background: #161616;
   --foreground: #ffffff;
   --orange: #ff8400;
   --black: #000000;
   --surface-dark: #161616;
   --surface-elevated: #1c1c1c;
+  --surface-muted: #121212;
+  --surface-card: #1c1c1c;
   --text-primary: #ffffff;
   --text-muted: rgba(255, 255, 255, 0.6);
+  --text-subtle: rgba(255, 255, 255, 0.45);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --input-bg: #121212;
+  --input-bg-focus: #141414;
+  --overlay-scrim: #161616;
+  --media-well: #ffffff;
+  --nav-fg: #ffffff;
+  --nav-contrast-bg: #ffffff;
+  --nav-contrast-fg: #000000;
+  --btn-primary-bg: #ffffff;
+  --btn-primary-fg: #000000;
+  --btn-ghost-border: rgba(255, 255, 255, 0.4);
+  --btn-explore-bg: rgba(255, 255, 255, 0.1);
+  --btn-explore-border: rgba(255, 255, 255, 0.38);
+  --btn-explore-fg: #ffffff;
+  --btn-explore-hover-bg: rgba(255, 255, 255, 0.96);
+  --btn-explore-hover-fg: #000000;
+  --mega-active: rgba(255, 255, 255, 0.1);
+  --mega-hover: rgba(255, 255, 255, 0.05);
+  --mega-card: rgba(255, 255, 255, 0.05);
+  --gallery-from: #2a2a2a;
+  --gallery-via: #222222;
+  --gallery-to: #1a1a1a;
   --accent: #ff8400;
   --section-min-height: 100vh;
+  color-scheme: dark;
+}
+
+/* Light — daytime industrial, same orange accent */
+.light {
+  --background: #f4f4f4;
+  --foreground: #161616;
+  --orange: #ff8400;
+  --black: #000000;
+  --surface-dark: #ebebeb;
+  --surface-elevated: #ffffff;
+  --surface-muted: #f0f0f0;
+  --surface-card: #ffffff;
+  --text-primary: #161616;
+  --text-muted: rgba(22, 22, 22, 0.58);
+  --text-subtle: rgba(22, 22, 22, 0.42);
+  --border: rgba(22, 22, 22, 0.16);
+  --border-strong: rgba(22, 22, 22, 0.28);
+  --input-bg: #ffffff;
+  --input-bg-focus: #ffffff;
+  --overlay-scrim: #161616;
+  --media-well: #ffffff;
+  --nav-fg: #161616;
+  --nav-contrast-bg: #161616;
+  --nav-contrast-fg: #ffffff;
+  --btn-primary-bg: #161616;
+  --btn-primary-fg: #ffffff;
+  --btn-ghost-border: rgba(22, 22, 22, 0.35);
+  --btn-explore-bg: rgba(22, 22, 22, 0.06);
+  --btn-explore-border: rgba(22, 22, 22, 0.28);
+  --btn-explore-fg: #161616;
+  --btn-explore-hover-bg: #161616;
+  --btn-explore-hover-fg: #ffffff;
+  --mega-active: rgba(255, 132, 0, 0.14);
+  --mega-hover: rgba(255, 132, 0, 0.07);
+  --mega-card: #f2f2f2;
+  --gallery-from: #fafafa;
+  --gallery-via: #f3f3f3;
+  --gallery-to: #eaeaea;
+  --accent: #ff8400;
+  --section-min-height: 100vh;
+  color-scheme: light;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-orange: #ff8400;
+  --color-orange: var(--accent);
   --color-black: #000000;
   --color-surface-dark: var(--surface-dark);
   --color-surface-elevated: var(--surface-elevated);
+  --color-surface-muted: var(--surface-muted);
+  --color-muted: var(--text-muted);
+  --color-subtle: var(--text-subtle);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input-bg);
   --font-heading: var(--font-inter), sans-serif;
   --font-body: var(--font-inter), sans-serif;
   --font-sans: var(--font-inter), sans-serif;
@@ -40,6 +120,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .font-heading {
@@ -79,6 +160,12 @@ body {
   min-height: var(--section-min-height);
 }
 
+.landing-container {
+  width: 100%;
+  max-width: min(2400px, 94vw);
+  margin-inline: auto;
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -89,8 +176,8 @@ body {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: #000;
-  background: #fff;
+  color: var(--btn-primary-fg);
+  background: var(--btn-primary-bg);
   border: none;
   cursor: pointer;
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -173,14 +260,14 @@ body {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: #fff;
+  color: var(--btn-explore-fg);
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: var(--btn-explore-bg);
+  border: 1px solid var(--btn-explore-border);
   border-radius: 9999px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
   transition:
     transform 0.25s ease,
     background 0.25s ease,
@@ -205,10 +292,10 @@ body {
 
 .btn-explore:hover {
   transform: translateY(-2px);
-  color: #000;
-  background: rgba(255, 255, 255, 0.96);
-  border-color: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
+  color: var(--btn-explore-hover-fg);
+  background: var(--btn-explore-hover-bg);
+  border-color: var(--btn-explore-hover-bg);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
 }
 
 .btn-explore:hover::before {
@@ -229,17 +316,17 @@ body {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: var(--foreground);
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--btn-ghost-border);
   cursor: pointer;
   transition: border-color 0.2s ease, background 0.2s ease;
   text-decoration: none;
 }
 
 .btn-ghost:hover {
-  border-color: rgba(255, 255, 255, 0.8);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
 }
 
 .btn-pill {
@@ -253,8 +340,8 @@ body {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #000;
-  background: #fff;
+  color: var(--btn-primary-fg);
+  background: var(--btn-primary-bg);
   border-radius: 9999px;
   text-decoration: none;
   transition: opacity 0.2s ease;
@@ -331,11 +418,11 @@ body {
 }
 
 .nav-glass-light {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(28px) saturate(200%);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(22, 22, 22, 0.14);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .nav-glass-dark-panel {
@@ -350,9 +437,77 @@ body {
   -webkit-backdrop-filter: blur(28px) saturate(200%);
 }
 
+.form-input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-strong);
+  background: var(--input-bg);
+  padding: 0.875rem 1rem;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  color: var(--foreground);
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: var(--text-subtle);
+}
+
+.form-input:focus {
+  border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+  background: var(--input-bg-focus);
+  outline: none;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Light theme: stronger dividers and form edges */
+.light .form-input {
+  border-color: var(--border-strong);
+}
+
+.light .border-border {
+  border-color: var(--border);
+}
+
+.light .border-border-strong {
+  border-color: var(--border-strong);
+}
+
+.light .divide-border > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--border);
+}
+
+.skeleton-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background: color-mix(in srgb, var(--foreground) 10%, transparent);
+}
+
+.skeleton-pulse-subtle {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  body {
+    transition: none;
   }
 
   .reveal {

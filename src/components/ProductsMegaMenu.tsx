@@ -10,24 +10,26 @@ import { ArrowUpRightIcon, ChevronSmallRight } from "./icons";
 type ProductsMegaMenuProps = {
   open: boolean;
   dark?: boolean;
+  wideContainer?: boolean;
 };
 
 export default function ProductsMegaMenu({
   open,
   dark = false,
+  wideContainer = false,
 }: ProductsMegaMenuProps) {
   const [activeCategoryId, setActiveCategoryId] = useState("base");
   const activeCategory =
     productCategories.find((c) => c.id === activeCategoryId) ??
     productCategories[0];
 
-  const bg = dark ? "bg-[#141414]" : "bg-white";
-  const border = dark ? "border-white/10" : "border-black/10";
-  const text = dark ? "text-white" : "text-black";
-  const textMuted = dark ? "text-white/60" : "text-black/60";
-  const activeBg = dark ? "bg-white/10" : "bg-[#fff4c2]";
-  const hoverBg = dark ? "hover:bg-white/5" : "hover:bg-[#fff9e6]";
-  const cardBg = dark ? "bg-white/5" : "bg-[#f2f2f2]";
+  const bg = dark ? "bg-[#141414]" : "bg-surface-elevated";
+  const border = dark ? "border-white/10" : "border-border-strong";
+  const text = dark ? "text-white" : "text-foreground";
+  const textMuted = dark ? "text-white/60" : "text-muted";
+  const activeBg = dark ? "bg-white/10" : "bg-[var(--mega-active)]";
+  const hoverBg = dark ? "hover:bg-white/5" : "hover:bg-[var(--mega-hover)]";
+  const cardBg = dark ? "bg-white/5" : "bg-[var(--mega-card)]";
 
   return (
     <div
@@ -39,7 +41,9 @@ export default function ProductsMegaMenu({
       aria-hidden={!open}
     >
       <div
-        className={`mx-auto max-w-[1440px] px-6 pb-10 pt-2 transition-transform duration-300 ease-out lg:px-10 ${
+        className={`${
+          wideContainer ? "landing-container" : "mx-auto max-w-[1440px]"
+        } px-6 pb-10 pt-2 transition-transform duration-300 ease-out lg:px-10 2xl:px-16 ${
           open ? "translate-y-0" : "-translate-y-2"
         }`}
       >
@@ -99,9 +103,9 @@ export default function ProductsMegaMenu({
                 <Link
                   key={product.id}
                   href={`/product/${PRODUCT_SLUGS[product.id] ?? product.id}`}
-                  className={`group flex flex-col ${cardBg} transition-opacity hover:opacity-90`}
+                  className={`group flex flex-col border ${border} ${cardBg} transition-opacity hover:opacity-90`}
                 >
-                  <div className="relative aspect-[4/3] w-full">
+                  <div className="relative aspect-[4/3] w-full bg-white">
                     <Image
                       src={product.image}
                       alt={product.name}

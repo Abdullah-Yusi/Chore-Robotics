@@ -11,11 +11,11 @@ export default function SpatialAwarenessSection() {
     <section
       ref={ref}
       id="spatial-awareness"
-      className="border-t border-white/10 bg-background px-6 py-20 lg:px-10 lg:py-28"
+      className="border-t border-border bg-background px-4 py-14 sm:px-6 sm:py-20 lg:px-10 lg:py-28"
     >
       <div className="mx-auto max-w-[1440px]">
         <p
-          className={`text-center font-body text-xs font-bold uppercase tracking-[0.28em] text-[#ff8400] sm:text-sm ${
+          className={`text-center font-body text-xs font-bold uppercase tracking-[0.28em] text-orange sm:text-sm ${
             isVisible ? "reveal is-visible" : "reveal"
           }`}
         >

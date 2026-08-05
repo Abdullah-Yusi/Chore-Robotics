@@ -1,8 +1,9 @@
+import { CHOREMOWER_NEW_IMAGES } from "./choremower-images";
+
 const frontBanner = (filename: string) =>
   `/front-banner/${encodeURIComponent(filename)}`;
 
-const slideshowNew = (filename: string) =>
-  `/slideshow-new/${encodeURIComponent(filename)}`;
+const slideshowNew = (filename: string) => `/slideshow-new/${filename}`;
 
 export type HeroSlideHeadlineLine = {
   text: string;
@@ -17,7 +18,7 @@ export type HeroSlideHeadline = {
 export const landingHeroSlides = [
   {
     id: "one-robot-every-chore",
-    image: slideshowNew("ONE ROBOT. EVERY CHORE. ALL YEAR_20260803_003459_0000.png"),
+    image: slideshowNew("hero-one-robot-every-chore-all-year.png"),
     alt: "ONE ROBOT. EVERY CHORE. ALL YEAR — CHORE modular robots for every season",
     imageClassName:
       "object-cover object-[50%_38%] sm:object-[50%_center] lg:object-center",
@@ -32,7 +33,7 @@ export const landingHeroSlides = [
   },
   {
     id: "irrigation",
-    image: slideshowNew("Irrigation Web Banner_20260803_003329_0000.png"),
+    image: slideshowNew("hero-irrigation.png"),
     alt: "CHORE smart irrigation robot spraying crops in a farm field at sunrise",
     imageClassName:
       "object-cover object-[58%_55%] sm:object-[55%_center] lg:object-center",
@@ -46,7 +47,7 @@ export const landingHeroSlides = [
   },
   {
     id: "snow-clearing",
-    image: slideshowNew("SB=SP Web Banner_20260803_003410_0000.png"),
+    image: slideshowNew("hero-snow-clearing.png"),
     alt: "CHORE snow plow and snowblower clearing snow from driveways in winter",
     imageClassName:
       "object-cover object-[50%_62%] sm:object-[50%_58%] lg:object-center",
@@ -60,7 +61,7 @@ export const landingHeroSlides = [
   },
   {
     id: "forklift-module",
-    image: slideshowNew("FM Web Banner_20260803_003354_0000.png"),
+    image: slideshowNew("hero-forklift-module.png"),
     alt: "CHORE autonomous material-handling robot in a warehouse",
     imageClassName:
       "object-cover object-[65%_58%] sm:object-[62%_center] lg:object-center",
@@ -95,7 +96,7 @@ export const productShowcase = [
     tagline: "Lawn Care",
     description:
       "Autonomous lawn mowing with precise coverage and intelligent navigation.",
-    image: "/lawnmover-new/Lawnmower%20Isometric%20view%2007.png",
+    image: CHOREMOWER_NEW_IMAGES[0],
     imagePosition: "object-center",
     cta: "Explore CHORE MOWER",
     href: "/product/choremower",
@@ -116,9 +117,6 @@ export const productShowcase = [
 const publicImage = (filename: string) =>
   `/${encodeURIComponent(filename)}`;
 
-const lawnmowerImagesAsset = (filename: string) =>
-  `/Lawnmower Images/${encodeURIComponent(filename)}`;
-
 const chorecollectorAsset = (filename: string) =>
   `/chorecollector/${encodeURIComponent(filename)}`;
 
@@ -129,7 +127,7 @@ export const productTabShowcase = [
   {
     id: "floor-care",
     tabLabel: "FLOOR CARE",
-    image: lawnmowerImagesAsset("Lawn Mower - White Background - Isometric_View_01.jpg.jpeg"),
+    image: CHOREMOWER_NEW_IMAGES[0],
     alt: "Chore Mower autonomous lawn mower for commercial and residential properties",
     titleBrand: "Chore",
     titleName: "Mower",
@@ -175,7 +173,7 @@ export const technologySection = {
 export const technologyPageHero = {
   eyebrow: "The Platform",
   headline: "MAPPING BEYOND THE SURFACE.",
-  video: "GPR Video-new.mp4",
+  video: "GPR Video Updated.mp4",
 };
 
 export const spatialAwarenessSection = {
@@ -253,8 +251,6 @@ export const newsletterSection = {
   buttonLabel: "Get updates",
 };
 
-export const footerAddress = "15 Hubble, Suite 200, Irvine, CA-92618";
-
 export const footerLinks = {
   products: [
     { label: "CHORE MOWER", href: "/product/choremower" },
@@ -276,16 +272,16 @@ export const footerLinks = {
     { label: "Support", href: "#support" },
     { label: "Contact", href: "#contact" },
     { label: "Press", href: "#press" },
-    { label: "Investors", href: "#investors" },
   ],
   legal: [
     { label: "Terms of Use", href: "#terms" },
-    { label: "Privacy", href: "#privacy" },
+    { label: "Privacy Policy", href: "#privacy" },
   ],
   social: [
     { label: "LinkedIn", href: "https://linkedin.com" },
     { label: "YouTube", href: "https://youtube.com" },
     { label: "Instagram", href: "https://instagram.com" },
+    { label: "TikTok", href: "https://tiktok.com" },
     { label: "X", href: "https://x.com" },
   ],
 };
@@ -293,4 +289,5 @@ export const footerLinks = {
 export const navLinks = [
   { label: "Technology", href: "/technology" },
   { label: "About", href: "/about" },
+  { label: "Investor", href: "#investors" },
 ];

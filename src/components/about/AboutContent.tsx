@@ -24,25 +24,25 @@ function SectionText({
       className={`scroll-mt-28 ${isVisible ? "reveal is-visible" : "reveal"}`}
     >
       {"sectionLabel" in section && section.sectionLabel ? (
-        <p className="mb-4 font-body text-[11px] font-bold uppercase tracking-[0.24em] text-[#ff8400]">
+        <p className="mb-4 font-body text-xs font-bold uppercase tracking-[0.24em] text-orange sm:text-[13px]">
           {section.sectionLabel}
         </p>
       ) : null}
 
-      <h2 className="font-heading text-[clamp(1.35rem,3vw,2rem)] font-semibold uppercase leading-[1.1] tracking-[0.03em] text-white">
+      <h2 className="font-heading text-[clamp(1.35rem,3vw,2rem)] font-semibold uppercase leading-[1.1] tracking-[0.03em] text-foreground">
         {section.title}
       </h2>
 
-      <div className="mt-5 space-y-5 font-body text-[15px] leading-relaxed text-white/65 sm:text-base sm:leading-relaxed">
+      <div className="mt-5 space-y-5 font-body text-[15px] leading-relaxed text-muted sm:text-base sm:leading-relaxed">
         {children}
       </div>
 
       {hasVideo ? (
         <a
           href={`#video-${section.id}`}
-          className="mt-6 inline-flex items-center gap-2 font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-[#ff8400] transition-colors hover:text-[#ff8400]/80"
+          className="mt-6 inline-flex items-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.14em] text-orange transition-colors hover:text-orange/80 sm:text-[13px]"
         >
-          <span className="h-px w-6 bg-[#ff8400]/60" />
+          <span className="h-px w-6 bg-orange/60" />
           View chapter video
           <svg className="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" aria-hidden>
             <path
@@ -72,7 +72,7 @@ function renderSectionContent(section: AboutSection) {
         <ul className="space-y-3">
           {section.bullets.map((bullet) => (
             <li key={bullet} className="flex gap-3">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ff8400]" />
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange" />
               <span>{bullet}</span>
             </li>
           ))}
@@ -98,22 +98,22 @@ export default function AboutContent() {
   const { ref: ctaRef, isVisible: ctaVisible } = useInView<HTMLDivElement>();
 
   return (
-    <section className="bg-background px-6 py-16 lg:px-10 lg:py-24">
+    <section className="bg-background px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-24">
       <div className="mx-auto max-w-[900px]">
         <div className="relative">
           <div
-            className="absolute left-[15px] top-2 bottom-2 w-px bg-gradient-to-b from-[#ff8400]/40 via-white/10 to-transparent sm:left-[19px]"
+            className="absolute left-[11px] top-2 bottom-2 w-px bg-gradient-to-b from-orange/40 via-border to-transparent sm:left-[19px]"
             aria-hidden
           />
 
           <div className="space-y-20 lg:space-y-28">
             {aboutPage.sections.map((section) => (
-              <div key={section.id} className="relative pl-12 sm:pl-16">
+              <div key={section.id} className="relative pl-10 sm:pl-16">
                 <div
-                  className="absolute left-0 top-1 flex h-8 w-8 items-center justify-center rounded-full border border-[#ff8400]/40 bg-background sm:h-10 sm:w-10"
+                  className="absolute left-0 top-1 flex h-8 w-8 items-center justify-center rounded-full border border-orange/40 bg-background sm:h-10 sm:w-10"
                   aria-hidden
                 >
-                  <span className="font-body text-[10px] font-bold text-[#ff8400] sm:text-[11px]">
+                  <span className="font-body text-xs font-bold text-orange sm:text-[13px]">
                     {section.chapter}
                   </span>
                 </div>
@@ -139,17 +139,17 @@ export default function AboutContent() {
 
         <div
           ref={ctaRef}
-          className={`mt-20 rounded-2xl border border-white/10 bg-[var(--surface-elevated)] p-8 sm:p-10 lg:mt-28 lg:p-12 ${
+          className={`mt-20 rounded-2xl border border-border bg-surface-elevated p-8 sm:p-10 lg:mt-28 lg:p-12 ${
             ctaVisible ? "reveal is-visible" : "reveal"
           }`}
         >
-          <p className="font-body text-[11px] font-bold uppercase tracking-[0.24em] text-[#ff8400]">
+          <p className="font-body text-xs font-bold uppercase tracking-[0.24em] text-orange sm:text-[13px]">
             {aboutPage.cta.eyebrow}
           </p>
-          <h2 className="mt-3 font-heading text-[clamp(1.35rem,3vw,2.25rem)] font-semibold uppercase leading-tight tracking-[0.03em] text-white">
+          <h2 className="mt-3 font-heading text-[clamp(1.35rem,3vw,2.25rem)] font-semibold uppercase leading-tight tracking-[0.03em] text-foreground">
             {aboutPage.cta.headline}
           </h2>
-          <p className="mt-4 max-w-xl font-body text-[15px] leading-relaxed text-white/60">
+          <p className="mt-4 max-w-xl font-body text-[15px] leading-relaxed text-muted">
             {aboutPage.cta.description}
           </p>
           <Link href={aboutPage.cta.href} className="btn-reserve group mt-8 inline-flex">

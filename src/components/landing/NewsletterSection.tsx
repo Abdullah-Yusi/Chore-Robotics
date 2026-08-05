@@ -16,17 +16,17 @@ export default function NewsletterSection() {
   return (
     <section
       ref={ref}
-      className={`border-t border-white/10 bg-[var(--surface-dark)] px-6 py-20 lg:px-10 lg:py-28 ${
+      className={`border-t border-border bg-surface-dark px-4 py-14 sm:px-6 sm:py-20 lg:px-10 lg:py-28 2xl:px-16 ${
         isVisible ? "reveal is-visible" : "reveal"
       }`}
     >
       <div className="mx-auto max-w-[640px] text-center">
-        <h2 className="font-heading text-[clamp(1.25rem,3vw,2rem)] font-medium text-white">
+        <h2 className="font-heading text-[clamp(1.25rem,3vw,2rem)] font-medium text-foreground">
           {newsletterSection.title}
         </h2>
 
         {submitted ? (
-          <p className="mt-8 font-body text-sm text-white/70">
+          <p className="mt-8 font-body text-sm text-muted">
             Thanks — you&apos;re on the list.
           </p>
         ) : (
@@ -38,9 +38,9 @@ export default function NewsletterSection() {
               type="email"
               required
               placeholder={newsletterSection.placeholder}
-              className="h-12 flex-1 border border-white/20 bg-transparent px-4 font-body text-sm text-white placeholder:text-white/40 outline-none transition-colors focus:border-white/50"
+              className="form-input h-12 flex-1 text-sm"
             />
-            <button type="submit" className="btn-primary shrink-0">
+            <button type="submit" className="btn-primary w-full shrink-0 sm:w-auto">
               {newsletterSection.buttonLabel}
             </button>
           </form>

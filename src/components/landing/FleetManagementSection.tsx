@@ -12,7 +12,7 @@ export default function FleetManagementSection() {
     <section
       ref={ref}
       id="fleet-management"
-      className="border-t border-white/10 bg-background px-6 py-20 lg:px-10 lg:py-28"
+      className="border-t border-border bg-background px-4 py-14 sm:px-6 sm:py-20 lg:px-10 lg:py-28"
     >
       <div className="mx-auto max-w-[1440px]">
         <p
@@ -24,12 +24,12 @@ export default function FleetManagementSection() {
         </p>
 
         <div
-          className={`relative mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.45)] sm:mt-12 ${
+          className={`relative mt-8 overflow-hidden rounded-2xl border border-border shadow-[0_24px_80px_rgba(0,0,0,0.45)] sm:mt-12 ${
             isVisible ? "reveal is-visible" : "reveal"
           }`}
           style={{ transitionDelay: "80ms" }}
         >
-          <div className="relative aspect-[4/3] min-h-[420px] w-full sm:aspect-[16/10] sm:min-h-[480px] lg:aspect-[21/9] lg:min-h-[520px]">
+          <div className="relative aspect-[16/10] min-h-[320px] w-full sm:min-h-[480px] lg:aspect-[21/9] lg:min-h-[520px]">
             <Image
               src={fleetManagementSection.image}
               alt={fleetManagementSection.imageAlt}
@@ -41,9 +41,9 @@ export default function FleetManagementSection() {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#161616]/88 via-[#161616]/25 to-[#161616]/65" />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#161616]/90 via-[#161616]/40 to-transparent" />
 
-            <div className="absolute inset-0 flex flex-col justify-between p-6 sm:p-10 lg:p-14">
+            <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-10 lg:p-14">
               <div className="max-w-xl lg:max-w-2xl">
-                <h2 className="font-heading text-[clamp(1.75rem,4.5vw,3rem)] font-semibold uppercase leading-[1.05] tracking-[0.03em] text-white">
+                <h2 className="font-heading text-[clamp(1.35rem,4vw,3rem)] font-semibold uppercase leading-[1.05] tracking-[0.03em] text-white sm:text-[clamp(1.75rem,4.5vw,3rem)]">
                   {fleetManagementSection.headline}
                 </h2>
 

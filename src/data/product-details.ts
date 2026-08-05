@@ -1,8 +1,9 @@
+import { CHOREMOWER_NEW_IMAGES } from "./choremower-images";
+
+export { CHOREMOWER_NEW_IMAGES, MOWER_FEATURED_IMAGE } from "./choremower-images";
+
 const publicAsset = (filename: string) =>
   `/${encodeURIComponent(filename)}`;
-
-const frontBannerAsset = (filename: string) =>
-  `/front-banner/${encodeURIComponent(filename)}`;
 
 const snowAsset = (filename: string) =>
   `/snow/${encodeURIComponent(filename)}`;
@@ -76,16 +77,6 @@ export const ACTIVE_PRODUCT_IDS = [
   "p9",
 ] as const;
 
-const lawnmowerAsset = (filename: string) =>
-  `/lawnmover-new/${encodeURIComponent(filename)}`;
-
-const lawnmowerImagesAsset = (filename: string) =>
-  `/Lawnmower Images/${encodeURIComponent(filename)}`;
-
-export const MOWER_FEATURED_IMAGE = lawnmowerImagesAsset(
-  "Lawn Mower - White Background - Isometric_View_01.jpg.jpeg",
-);
-
 export const productDetails: Record<string, ProductDetailData> = {
   p10: {
     id: "p10",
@@ -116,12 +107,7 @@ export const productDetails: Record<string, ProductDetailData> = {
           "Delivers a clean, even cut across varied terrain for a professional finish on every pass.",
       },
     ],
-    images: [
-      lawnmowerAsset("Lawnmower Isometric view 07.png"),
-      lawnmowerAsset("Lawnmover - Isometric 02.png"),
-      lawnmowerAsset("Lawnmover - Side view.png"),
-      lawnmowerAsset("Lawnmover - Top view.png"),
-    ],
+    images: [...CHOREMOWER_NEW_IMAGES],
     whatsIncluded: [
       "CHORE MOWER Lawn Mowing Module",
       "Quick-Release Mounting Hardware Pack",
@@ -432,7 +418,7 @@ export const productDetails: Record<string, ProductDetailData> = {
 };
 
 const productMenuImages: Record<string, string> = {
-  p10: lawnmowerAsset("Lawnmower Isometric view 07.png"),
+  p10: CHOREMOWER_NEW_IMAGES[0],
   p2: COLLECTOR_GALLERY_IMAGES[0],
   p4: snowplowerAsset("Snow Plow - White Background - Isometric_View_01.jpg.jpeg"),
   p5: choreblowerAsset("Snow blower - Isometric View - White Background 01.jpg.jpeg"),

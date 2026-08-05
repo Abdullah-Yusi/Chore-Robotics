@@ -26,15 +26,14 @@ export default function ProductDetail({ product }: ProductDetailProps) {
   };
 
   return (
-    <div className="bg-white min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-background py-6 px-4 sm:py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1440px]">
-        {/* Breadcrumb Navigation */}
-        <nav className="mb-6 flex items-center gap-2 text-xs text-black/50 font-medium tracking-wide">
-          <Link href="/" className="hover:text-black hover:underline transition-all">Home</Link>
+        <nav className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium tracking-wide text-muted">
+          <Link href="/" className="transition-colors hover:text-foreground hover:underline">Home</Link>
           <span>/</span>
           <span className="capitalize">{product.category}</span>
           <span>/</span>
-          <span className="text-black font-semibold">{product.name}</span>
+          <span className="font-semibold text-foreground">{product.name}</span>
         </nav>
 
         {/* Two-Column Grid */}
@@ -48,10 +47,10 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                 <button
                   key={img}
                   onClick={() => setActiveImageIdx(idx)}
-                  className={`relative aspect-square w-full overflow-hidden rounded-xl border-2 bg-gradient-to-br from-[#f7f7f7] to-[#eeeeee] transition-all duration-300 cursor-pointer ${
+                  className={`relative aspect-square w-full overflow-hidden rounded-xl border-2 bg-gradient-to-br from-[var(--gallery-from)] via-[var(--gallery-via)] to-[var(--gallery-to)] transition-all duration-300 cursor-pointer ${
                     activeImageIdx === idx
-                      ? "border-[#ff8400] shadow-[0_0_0_3px_rgba(255,132,0,0.18)] scale-[1.02]"
-                      : "border-black/5 hover:border-black/15"
+                      ? "border-orange shadow-[0_0_0_3px_rgba(255,132,0,0.18)] scale-[1.02]"
+                      : "border-border hover:border-border-strong"
                   }`}
                 >
                   <Image
@@ -66,11 +65,10 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             </div>
 
             {/* Main Image Viewport */}
-            <div className="relative flex flex-1 aspect-square items-center justify-center overflow-hidden rounded-2xl border border-black/5 bg-gradient-to-br from-[#fafafa] via-[#f3f3f3] to-[#eaeaea] shadow-[0_12px_40px_rgba(0,0,0,0.06)] group">
-              {/* Expand/Zoom Button */}
+            <div className="relative flex flex-1 aspect-square items-center justify-center overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-[var(--gallery-from)] via-[var(--gallery-via)] to-[var(--gallery-to)] shadow-[0_12px_40px_rgba(0,0,0,0.06)] group">
               <button
                 onClick={() => setIsZoomOpen(true)}
-                className="absolute top-4 right-4 z-10 cursor-pointer rounded-full border border-black/5 bg-white/85 p-2.5 text-black shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white active:scale-95"
+                className="absolute top-4 right-4 z-10 cursor-pointer rounded-full border border-border bg-surface-elevated/90 p-2.5 text-foreground shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-105 active:scale-95"
                 aria-label="Zoom Image"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +91,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
               {/* Prev/Next arrows overlay */}
               <button
                 onClick={handlePrevImage}
-                className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 -translate-x-2 cursor-pointer items-center justify-center rounded-full border border-black/5 bg-white/80 text-black shadow-md backdrop-blur-md opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 hover:bg-white hover:border-black/10"
+                className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-border bg-surface-elevated/90 text-foreground shadow-md backdrop-blur-md opacity-100 transition-all duration-300 sm:left-4 sm:-translate-x-2 sm:opacity-0 sm:group-hover:translate-x-0 sm:group-hover:opacity-100"
                 aria-label="Previous Image"
               >
                 <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -102,7 +100,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
               </button>
               <button
                 onClick={handleNextImage}
-                className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 translate-x-2 cursor-pointer items-center justify-center rounded-full border border-black/5 bg-white/80 text-black shadow-md backdrop-blur-md opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 hover:bg-white hover:border-black/10"
+                className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-border bg-surface-elevated/90 text-foreground shadow-md backdrop-blur-md opacity-100 transition-all duration-300 sm:right-4 sm:translate-x-2 sm:opacity-0 sm:group-hover:translate-x-0 sm:group-hover:opacity-100"
                 aria-label="Next Image"
               >
                 <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,10 +120,10 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                 <button
                   key={img}
                   onClick={() => setActiveImageIdx(idx)}
-                  className={`relative aspect-square w-[72px] shrink-0 overflow-hidden rounded-xl border-2 bg-gradient-to-br from-[#f7f7f7] to-[#eeeeee] transition-all duration-300 cursor-pointer ${
+                  className={`relative aspect-square w-[72px] shrink-0 overflow-hidden rounded-xl border-2 bg-gradient-to-br from-[var(--gallery-from)] via-[var(--gallery-via)] to-[var(--gallery-to)] transition-all duration-300 cursor-pointer ${
                     activeImageIdx === idx
-                      ? "border-[#ff8400] shadow-[0_0_0_3px_rgba(255,132,0,0.18)] scale-[1.03]"
-                      : "border-black/5"
+                      ? "border-orange shadow-[0_0_0_3px_rgba(255,132,0,0.18)] scale-[1.03]"
+                      : "border-border"
                   }`}
                 >
                   <Image
@@ -144,25 +142,23 @@ export default function ProductDetail({ product }: ProductDetailProps) {
           <div className="lg:col-span-5 flex flex-col justify-start">
             {/* Tag / Category */}
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-xs text-black/40 font-semibold tracking-wide uppercase">{product.category}</span>
+              <span className="text-xs font-semibold uppercase tracking-wide text-subtle">{product.category}</span>
             </div>
 
-            {/* Product Title */}
-            <h1 className="font-body text-3xl sm:text-4xl font-extrabold uppercase leading-none tracking-wide text-black mb-2.5">
+            <h1 className="mb-2.5 font-body text-[clamp(1.75rem,6vw,2.25rem)] font-extrabold uppercase leading-none tracking-wide text-foreground sm:text-3xl lg:text-4xl">
               {product.name}
             </h1>
 
-            {/* Key Bullet Features */}
-            <ul className="my-6 space-y-3 border-t border-b border-black/5 py-5">
+            <ul className="my-6 space-y-3 border-t border-b border-border py-5">
               {product.features.map((f, idx) => (
                 <li key={idx} className="flex items-start gap-3">
-                  <span className="text-[#ff8400] shrink-0 mt-0.5">
+                  <span className="mt-0.5 shrink-0 text-orange">
                     <svg className="h-4.5 w-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </span>
-                  <p className="text-[13.5px] leading-relaxed text-black/75">
-                    <span className="font-bold text-black">{f.title}:</span> {f.description}
+                  <p className="text-[13.5px] leading-relaxed text-muted">
+                    <span className="font-bold text-foreground">{f.title}:</span> {f.description}
                   </p>
                 </li>
               ))}
@@ -185,8 +181,8 @@ export default function ProductDetail({ product }: ProductDetailProps) {
         </div>
 
         {/* Tabbed Section (Bottom Section) */}
-        <div className="mt-16 border-t border-black/5 pt-10">
-          <div className="flex border-b border-black/5 gap-8 overflow-x-auto pb-px">
+        <div className="mt-12 border-t border-border pt-8 sm:mt-16 sm:pt-10">
+          <div className="flex gap-4 overflow-x-auto border-b border-border pb-px sm:gap-8 [-webkit-overflow-scrolling:touch]">
             {(["desc", "specs", "whats-included"] as const).map((tab) => {
               const isActive = activeTab === tab;
               const label = tab === "desc" ? "Description" : tab === "specs" ? "Specifications" : "What's Included";
@@ -194,10 +190,10 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`pb-4 text-[13px] font-bold uppercase tracking-wider transition-all border-b-2 cursor-pointer whitespace-nowrap ${
-                    isActive 
-                      ? "border-black text-black" 
-                      : "border-transparent text-black/45 hover:text-black/75"
+                  className={`cursor-pointer whitespace-nowrap border-b-2 pb-4 text-[13px] font-bold uppercase tracking-wider transition-all ${
+                    isActive
+                      ? "border-foreground text-foreground"
+                      : "border-transparent text-subtle hover:text-muted"
                   }`}
                 >
                   {label}
@@ -206,24 +202,28 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             })}
           </div>
 
-          <div className="py-6 min-h-[160px]">
+          <div className="min-h-[160px] py-6">
             {activeTab === "desc" && (
               <div className="max-w-3xl">
-                <p className="text-sm leading-relaxed text-black/70 font-medium mb-4">{product.description}</p>
-                <p className="text-sm leading-relaxed text-black/70 font-medium">
+                <p className="mb-4 text-sm font-medium leading-relaxed text-muted">{product.description}</p>
+                <p className="text-sm font-medium leading-relaxed text-muted">
                   Designed, assembled, and optimized in America, the modular toolkit is built with precision, durability, and standard weatherproofing to withstand harsh elements year-round.
                 </p>
               </div>
             )}
 
             {activeTab === "specs" && (
-              <div className="max-w-2xl overflow-hidden rounded-xl border border-black/5 bg-[#fafafa]">
-                <table className="min-w-full divide-y divide-black/5">
-                  <tbody className="divide-y divide-black/5">
+              <div className="max-w-2xl overflow-hidden rounded-xl border border-border bg-surface-muted">
+                <table className="w-full">
+                  <tbody className="divide-y divide-border">
                     {Object.entries(product.specs).map(([key, val]) => (
-                      <tr key={key}>
-                        <td className="px-5 py-4 text-xs font-bold text-black uppercase tracking-wider bg-black/[0.01] w-1/3">{key}</td>
-                        <td className="px-5 py-4 text-[13.5px] font-medium text-black/75">{val}</td>
+                      <tr key={key} className="flex flex-col sm:table-row">
+                        <td className="block px-4 pb-1 pt-4 text-xs font-bold uppercase tracking-wider text-foreground sm:table-cell sm:w-1/3 sm:px-5 sm:py-4 sm:pb-4">
+                          {key}
+                        </td>
+                        <td className="block px-4 pb-4 pt-0 text-[13.5px] font-medium text-muted sm:table-cell sm:px-5 sm:py-4">
+                          {val}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -234,8 +234,8 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             {activeTab === "whats-included" && (
               <ul className="max-w-lg space-y-3">
                 {product.whatsIncluded.map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-sm font-medium text-black/75">
-                    <span className="w-1.5 h-1.5 rounded-full bg-black/60 shrink-0" />
+                  <li key={idx} className="flex items-center gap-3 text-sm font-medium text-muted">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/60" />
                     <span>{item}</span>
                   </li>
                 ))}

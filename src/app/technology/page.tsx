@@ -16,7 +16,7 @@ export default function TechnologyPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-background pt-[72px]">
+      <main className="bg-background pt-[88px]">
         <TechnologySection />
         <SpatialAwarenessSection />
         <ObstacleNavigationSection />

@@ -2,6 +2,19 @@ export const aboutPage = {
   intro: {
     eyebrow: "About Us",
     headline: "About Chore Robotics",
+    address: "15 Hubble, Suite 200, Irvine, CA-92618",
+  },
+  missionVision: {
+    mission: {
+      eyebrow: "Mission",
+      title: "Our Mission",
+      text: "To automate indoor and outdoor maintenance with intelligent modular robots that reduce costs, save time, and eliminate repetitive manual work.",
+    },
+    vision: {
+      eyebrow: "Vision",
+      title: "Our Vision",
+      text: "A future where every property is maintained by autonomous robots that work safely, intelligently, and around the clock with minimal human involvement.",
+    },
   },
   sections: [
     {
@@ -28,24 +41,8 @@ export const aboutPage = {
       ],
     },
     {
-      id: "mission",
-      chapter: "03",
-      title: "Our Mission",
-      paragraphs: [
-        "To automate indoor and outdoor maintenance with intelligent modular robots that reduce costs, save time, and eliminate repetitive manual work.",
-      ],
-    },
-    {
-      id: "vision",
-      chapter: "04",
-      title: "Our Vision",
-      paragraphs: [
-        "A future where every property is maintained by autonomous robots that work safely, intelligently, and around the clock with minimal human involvement.",
-      ],
-    },
-    {
       id: "different",
-      chapter: "05",
+      chapter: "03",
       title: "What Makes Us Different",
       bullets: [
         "We did not build another single purpose robot.",
@@ -58,7 +55,7 @@ export const aboutPage = {
     },
     {
       id: "journey-foundation",
-      chapter: "06",
+      chapter: "04",
       title: "Building the Foundation",
       sectionLabel: "Our Journey",
       paragraphs: [
@@ -68,7 +65,7 @@ export const aboutPage = {
     },
     {
       id: "journey-expanding",
-      chapter: "07",
+      chapter: "05",
       title: "Expanding the Platform",
       paragraphs: [
         "Today, we are expanding our modular ecosystem so one robot can handle more jobs across more industries.",
@@ -78,7 +75,7 @@ export const aboutPage = {
     },
     {
       id: "journey-future",
-      chapter: "08",
+      chapter: "06",
       title: "The Future",
       paragraphs: [
         "Our goal is simple.",

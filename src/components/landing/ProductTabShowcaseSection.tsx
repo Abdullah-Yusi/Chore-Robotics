@@ -25,7 +25,7 @@ export default function ProductTabShowcaseSection() {
       }`}
     >
       <div className="mx-auto max-w-[1440px]">
-        <article className="relative h-[364px] overflow-hidden rounded-2xl border border-white/10 sm:h-[442px] lg:h-[494px]">
+        <article className="relative h-[460px] overflow-hidden rounded-2xl border border-border sm:h-[520px] lg:h-[580px]">
           {productTabShowcase.map((item, index) => (
             <div
               key={item.id}
@@ -49,10 +49,10 @@ export default function ProductTabShowcaseSection() {
           <div className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-t from-black/65 via-black/15 to-transparent" />
 
           <div
-            className="absolute left-0 top-0 z-[30] flex h-[38px] items-stretch sm:h-[42px]"
+            className="absolute left-0 top-0 z-[30] max-w-full overflow-x-auto sm:overflow-visible"
             style={{ clipPath: "polygon(0 0, calc(100% - 32px) 0, 100% 100%, 0 100%)" }}
           >
-            <div className="pointer-events-auto flex h-full items-center gap-3 bg-[#4a4a4a]/90 px-3 backdrop-blur-sm sm:gap-5 sm:px-5">
+            <div className="pointer-events-auto flex h-[38px] min-w-max items-center gap-2 bg-[#4a4a4a]/90 px-2 backdrop-blur-sm sm:h-[42px] sm:gap-5 sm:px-5">
               {productTabShowcase.map((item, index) => {
                 const isActive = index === active;
 
@@ -84,11 +84,11 @@ export default function ProductTabShowcaseSection() {
 
           <Link
             href={current.href}
-            className="absolute bottom-3 left-3 z-[20] w-max sm:bottom-4 sm:left-4"
+            className="absolute bottom-3 left-3 right-12 z-[20] max-w-[calc(100%-3.5rem)] sm:bottom-4 sm:left-4 sm:right-16 sm:max-w-none"
           >
             <div key={current.id} className="showcase-text-enter group">
               <h2
-                className="whitespace-nowrap font-heading text-[clamp(0.95rem,2.8vw,2.25rem)] font-bold uppercase leading-[0.95] tracking-[0.02em] text-white"
+                className="font-heading text-[clamp(0.95rem,2.8vw,2.25rem)] font-bold uppercase leading-[0.95] tracking-[0.02em] text-white sm:whitespace-nowrap"
                 aria-label={`${current.titleBrand} ${current.titleName}`}
               >
                 {current.titleBrand}&nbsp;{current.titleName}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useIsClient } from "@/hooks/useIsClient";
 
 type ThemeToggleProps = {
   darkChrome?: boolean;
@@ -9,11 +9,7 @@ type ThemeToggleProps = {
 
 export default function ThemeToggle({ darkChrome = true }: ThemeToggleProps) {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useIsClient();
 
   const isDark = !mounted || resolvedTheme !== "light";
 

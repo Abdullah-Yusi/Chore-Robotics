@@ -1,8 +1,5 @@
 import { CHOREMOWER_NEW_IMAGES } from "./choremower-images";
 
-const frontBanner = (filename: string) =>
-  `/front-banner/${encodeURIComponent(filename)}`;
-
 const slideshowNew = (filename: string) => `/slideshow-new/${filename}`;
 
 export type HeroSlideHeadlineLine = {
@@ -113,9 +110,6 @@ export const productShowcase = [
     href: "/product/choremopper",
   },
 ] as const;
-
-const publicImage = (filename: string) =>
-  `/${encodeURIComponent(filename)}`;
 
 const chorecollectorAsset = (filename: string) =>
   `/chorecollector/${encodeURIComponent(filename)}`;

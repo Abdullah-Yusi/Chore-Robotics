@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 type UseInViewOptions = {
   threshold?: number;
@@ -8,33 +8,42 @@ type UseInViewOptions = {
   triggerOnce?: boolean;
 };
 
+function getReducedMotionSnapshot() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function subscribeReducedMotion(onStoreChange: () => void) {
+  const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mediaQuery.addEventListener("change", onStoreChange);
+  return () => mediaQuery.removeEventListener("change", onStoreChange);
+}
+
 export function useInView<T extends HTMLElement = HTMLDivElement>(
   options: UseInViewOptions = {},
 ) {
   const { threshold = 0.15, rootMargin = "0px", triggerOnce = true } = options;
   const ref = useRef<T>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const prefersReducedMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotionSnapshot,
+    () => false,
+  );
+  const [hasIntersected, setHasIntersected] = useState(false);
+  const isVisible = prefersReducedMotion || hasIntersected;
 
   useEffect(() => {
+    if (prefersReducedMotion) return;
+
     const element = ref.current;
     if (!element) return;
-
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (prefersReducedMotion) {
-      setIsVisible(true);
-      return;
-    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setHasIntersected(true);
           if (triggerOnce) observer.disconnect();
         } else if (!triggerOnce) {
-          setIsVisible(false);
+          setHasIntersected(false);
         }
       },
       { threshold, rootMargin },
@@ -42,7 +51,7 @@ export function useInView<T extends HTMLElement = HTMLDivElement>(
 
     observer.observe(element);
     return () => observer.disconnect();
-  }, [threshold, rootMargin, triggerOnce]);
+  }, [prefersReducedMotion, threshold, rootMargin, triggerOnce]);
 
   return { ref, isVisible };
 }

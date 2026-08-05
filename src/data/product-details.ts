@@ -2,16 +2,8 @@ import { CHOREMOWER_NEW_IMAGES } from "./choremower-images";
 
 export { CHOREMOWER_NEW_IMAGES, MOWER_FEATURED_IMAGE } from "./choremower-images";
 
-const publicAsset = (filename: string) =>
-  `/${encodeURIComponent(filename)}`;
-
 const snowAsset = (filename: string) =>
   `/snow/${encodeURIComponent(filename)}`;
-
-const snowblowerAsset = snowAsset;
-
-const leafAsset = (filename: string) =>
-  `/leaf/${encodeURIComponent(filename)}`;
 
 const chorecollectorAsset = (filename: string) =>
   `/chorecollector/${encodeURIComponent(filename)}`;
@@ -33,9 +25,6 @@ const chorirrigatorAsset = (filename: string) =>
 
 const snowplowerAsset = (filename: string) =>
   `/Snowplower/${encodeURIComponent(filename)}`;
-
-const floorAsset = (filename: string) =>
-  `/floor/${encodeURIComponent(filename)}`;
 
 export interface Feature {
   title: string;

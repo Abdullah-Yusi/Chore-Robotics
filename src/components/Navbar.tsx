@@ -8,6 +8,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { PRODUCT_SLUGS } from "@/data/product-details";
 import { navLinks } from "@/data/landing";
 import { productCategories } from "@/data/products-menu";
+import { useIsClient } from "@/hooks/useIsClient";
 import ProductsMegaMenu from "./ProductsMegaMenu";
 import ThemeToggle from "./ThemeToggle";
 
@@ -23,28 +24,29 @@ export default function Navbar() {
   const isLanding = pathname === "/";
   const isProductPage = pathname.startsWith("/product");
   const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useIsClient();
   const [scrolled, setScrolled] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [prevPathname, setPrevPathname] = useState(pathname);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [pathname]);
-
-  useEffect(() => {
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setMobileMenuOpen(false);
     setMobileProductsOpen(false);
     setProductsOpen(false);
+  }
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    const frame = requestAnimationFrame(onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, [pathname]);
 
   useEffect(() => {

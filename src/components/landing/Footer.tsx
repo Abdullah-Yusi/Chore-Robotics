@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { useEffect, useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
+import { useIsClient } from "@/hooks/useIsClient";
 import { aboutPage } from "@/data/about";
 import { footerLinks } from "@/data/landing";
 
@@ -110,12 +111,8 @@ const socialIconMap = {
 
 export default function Footer({ showAddress = false }: FooterProps) {
   const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useIsClient();
   const copyrightYear = new Date().getFullYear();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const isLight = mounted && resolvedTheme === "light";
 

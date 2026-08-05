@@ -27,26 +27,44 @@ jobs:
           script: |
             set -e
 
-            cd ${{ secrets.DEPLOY_PATH }}
+            # Load Node.js installed with NVM
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-            echo "Deploying latest code..."
+            nvm use v22.23.2
+
+            # Ensure Node binaries are available
+            export PATH="$HOME/.nvm/versions/node/v22.23.2/bin:$PATH"
+
+            echo "Node Version:"
+            node -v
+
+            echo "PNPM Version:"
+            pnpm -v
+
+            echo "PM2 Version:"
+            pm2 -v
+
+            cd /home/ubuntu/Chore-Robotics
+
+            echo "Fetching latest code..."
             git fetch origin main
             git reset --hard origin/main
 
             echo "Installing dependencies..."
-            corepack enable
             pnpm install --frozen-lockfile
 
-            echo "Building application..."
+            echo "Building project..."
             pnpm run build
 
-            echo "Restarting PM2..."
+            echo "Restarting application..."
+
             if pm2 describe chore-web > /dev/null 2>&1; then
-              pm2 restart chore-web
+              pm2 restart chore-web --update-env
             else
               pm2 start pnpm --name chore-web -- start
             fi
 
             pm2 save
 
-            echo "Deployment completed successfully!"
+            echo "Deployment completed successfully."

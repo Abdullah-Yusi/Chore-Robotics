@@ -48,7 +48,9 @@ export default function LandingProductsSection() {
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                    className={`transition-transform duration-700 ease-out group-hover:scale-[1.06] ${
+                      product.imageClassName ?? "object-contain p-5 sm:p-6"
+                    }`}
                     sizes="(max-width: 1024px) 100vw, 33vw"
                   />
 
@@ -63,7 +65,7 @@ export default function LandingProductsSection() {
                 </div>
 
                 <div className="flex flex-1 flex-col p-6 lg:p-7">
-                  <h3 className="font-heading text-xl font-semibold uppercase tracking-[0.03em] text-foreground transition-colors duration-300 group-hover:text-orange lg:text-[1.35rem]">
+                  <h3 className="font-heading text-lg font-semibold tracking-[0.01em] text-foreground transition-colors duration-300 group-hover:text-orange lg:text-xl">
                     {product.name}
                   </h3>
 

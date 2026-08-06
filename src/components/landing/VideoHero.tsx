@@ -55,19 +55,29 @@ export default function VideoHero() {
       <div className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-t from-black/75 via-black/25 to-black/35 sm:from-black/70 sm:via-black/20 sm:to-black/30" />
       <div className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-b from-black/45 via-transparent to-transparent sm:from-black/40" />
 
-      <div className="pointer-events-none absolute inset-0 z-[4] flex items-center justify-center px-4 pb-20 pt-12 sm:translate-y-[4%] sm:px-6 sm:pb-0 sm:pt-0 lg:translate-y-[6%] lg:px-16">
+      <div
+        className={`pointer-events-none absolute inset-0 z-[4] flex px-4 sm:px-6 lg:px-16 ${
+          slide.headline.position === "top"
+            ? "items-start justify-center pt-[10%] sm:pt-[9%] lg:pt-[8%]"
+            : slide.headline.position === "left"
+              ? "items-center justify-start pb-20 pt-12 sm:pb-0 sm:pt-0 sm:pl-8 lg:pl-20"
+              : "items-center justify-center pb-20 pt-12 sm:translate-y-[4%] sm:pb-0 sm:pt-0 lg:translate-y-[6%]"
+        }`}
+      >
         <h1
           key={slide.id}
-          className="showcase-text-enter hero-slide-headline text-center font-heading text-[clamp(1.4rem,6.5vw,4.5rem)] font-bold uppercase leading-[1.05] tracking-[0.03em] sm:text-[clamp(2rem,5.5vw,4.5rem)] sm:leading-[1.02]"
+          className={`showcase-text-enter hero-slide-headline font-heading font-bold uppercase leading-[1.05] tracking-[0.03em] sm:leading-[1.02] ${
+            isPrimarySlide
+              ? "whitespace-nowrap text-[clamp(0.85rem,3.6vw,3.25rem)] sm:text-[clamp(1.35rem,3.8vw,3.5rem)]"
+              : "text-[clamp(1.4rem,6.5vw,4.5rem)] sm:text-[clamp(2rem,5.5vw,4.5rem)]"
+          } ${
+            slide.headline.position === "left" ? "text-left" : "text-center"
+          }`}
         >
           {slide.headline.lines.map((line) => (
             <span
               key={line.text}
-              className={`block ${
-                isPrimarySlide && "accent" in line && line.accent
-                  ? "text-orange"
-                  : "text-white"
-              }`}
+              className={`${isPrimarySlide ? "inline" : "block"} text-white`}
             >
               {line.text}
             </span>

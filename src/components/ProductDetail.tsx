@@ -145,7 +145,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
               <span className="text-xs font-semibold uppercase tracking-wide text-subtle">{product.category}</span>
             </div>
 
-            <h1 className="mb-2.5 font-body text-[clamp(1.75rem,6vw,2.25rem)] font-extrabold uppercase leading-none tracking-wide text-foreground sm:text-3xl lg:text-4xl">
+            <h1 className="mb-2.5 font-heading text-2xl font-semibold leading-tight tracking-[0.01em] text-foreground sm:text-3xl">
               {product.name}
             </h1>
 

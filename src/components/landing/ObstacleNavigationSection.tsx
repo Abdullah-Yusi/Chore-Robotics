@@ -56,7 +56,7 @@ export default function ObstacleNavigationSection() {
 
             <div className="absolute inset-0 flex items-start p-4 sm:p-10 lg:p-14">
               <div className="max-w-xl lg:max-w-2xl">
-                <h2 className="font-heading text-[clamp(1.35rem,4vw,3.25rem)] font-semibold uppercase leading-[1.05] tracking-[0.03em] text-white sm:text-[clamp(1.75rem,4.5vw,3.25rem)]">
+                <h2 className="font-heading text-[clamp(1.1rem,2.8vw,2.25rem)] font-semibold uppercase leading-[1.08] tracking-[0.03em] text-white sm:text-[clamp(1.35rem,3.2vw,2.5rem)]">
                   {obstacleNavigationSection.headline}
                 </h2>
 

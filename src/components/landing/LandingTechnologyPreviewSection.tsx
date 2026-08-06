@@ -49,7 +49,7 @@ export default function LandingTechnologyPreviewSection() {
                 <span className="inline-flex items-center rounded-full border border-[#ff8400]/35 bg-[#ff8400]/10 px-3 py-1 font-body text-[10px] font-bold uppercase tracking-[0.18em] text-[#ff8400] backdrop-blur-sm">
                   {technologySection.tag}
                 </span>
-                <h3 className="mt-4 font-heading text-[clamp(1.35rem,3vw,2rem)] font-semibold uppercase leading-[1.08] tracking-[0.03em] text-white">
+                <h3 className="mt-4 whitespace-nowrap font-heading text-[clamp(1.1rem,2.8vw,2rem)] font-semibold uppercase leading-[1.08] tracking-[0.03em] text-white">
                   {technologySection.headline}
                 </h3>
                 <p className="mt-3 font-body text-sm leading-relaxed text-white/70 sm:text-[15px]">

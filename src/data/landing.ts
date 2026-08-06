@@ -1,4 +1,5 @@
 import { CHOREMOWER_NEW_IMAGES } from "./choremower-images";
+import { SNOW_BLOWER_FEATURED_IMAGE } from "./product-details";
 
 const slideshowNew = (filename: string) => `/slideshow-new/${filename}`;
 
@@ -9,7 +10,7 @@ export type HeroSlideHeadlineLine = {
 
 export type HeroSlideHeadline = {
   lines: HeroSlideHeadlineLine[];
-  position: "top" | "center";
+  position: "top" | "center" | "left";
 };
 
 export const landingHeroSlides = [
@@ -22,9 +23,9 @@ export const landingHeroSlides = [
     headline: {
       position: "center",
       lines: [
-        { text: "ONE ROBOT." },
+        { text: "ONE ROBOT. " },
         { text: "EVERY CHORE.", accent: true },
-        { text: "ALL YEAR" },
+        { text: " ALL YEAR" },
       ],
     },
   },
@@ -35,10 +36,10 @@ export const landingHeroSlides = [
     imageClassName:
       "object-cover object-[58%_55%] sm:object-[55%_center] lg:object-center",
     headline: {
-      position: "center",
+      position: "top",
       lines: [
-        { text: "SMARTER WATER.", accent: true },
-        { text: "STRONGER YIELDS." },
+        { text: "BEST-IN-CLASS AMERICAN" },
+        { text: "AUTONOMOUS SOLUTIONS" },
       ],
     },
   },
@@ -63,7 +64,7 @@ export const landingHeroSlides = [
     imageClassName:
       "object-cover object-[65%_58%] sm:object-[62%_center] lg:object-center",
     headline: {
-      position: "center",
+      position: "left",
       lines: [
         { text: "HEAVY LOADS.", accent: true },
         { text: "ZERO LIFT." },
@@ -89,24 +90,24 @@ export const reserveSection = {
 export const productShowcase = [
   {
     id: "choremower",
-    title: "CHORE MOWER",
+    title: "Chore Mower",
     tagline: "Lawn Care",
     description:
       "Autonomous lawn mowing with precise coverage and intelligent navigation.",
     image: CHOREMOWER_NEW_IMAGES[0],
     imagePosition: "object-center",
-    cta: "Explore CHORE MOWER",
+    cta: "Explore Chore Mower",
     href: "/product/choremower",
   },
   {
     id: "choremopper",
-    title: "CHORE MOPPER",
+    title: "Chore Mopper",
     tagline: "Floor Care",
     description:
       "Autonomous floor cleaning for warehouses and commercial facilities.",
     image: "/Lawnmower%20Images/Lawn%20Mower%20-%20White%20Background%20-%20Isometric_View_01.jpg.jpeg",
     imagePosition: "object-center",
-    cta: "Explore CHORE MOPPER",
+    cta: "Explore Chore Mopper",
     href: "/product/choremopper",
   },
 ] as const;
@@ -114,15 +115,14 @@ export const productShowcase = [
 const chorecollectorAsset = (filename: string) =>
   `/chorecollector/${encodeURIComponent(filename)}`;
 
-const choreblowerAsset = (filename: string) =>
-  `/choreblower/${encodeURIComponent(filename)}`;
-
 export const productTabShowcase = [
   {
     id: "floor-care",
     tabLabel: "FLOOR CARE",
     image: CHOREMOWER_NEW_IMAGES[0],
     alt: "Chore Mower autonomous lawn mower for commercial and residential properties",
+    imageClassName:
+      "object-contain object-center p-3 sm:object-cover sm:object-[68%_center] sm:p-0",
     titleBrand: "Chore",
     titleName: "Mower",
     subtitle: "LET CHORE HANDLE ALL THE HEAVY LIFTING",
@@ -132,8 +132,10 @@ export const productTabShowcase = [
   {
     id: "heavy-snow",
     tabLabel: "HEAVY SNOW",
-    image: choreblowerAsset("Snow blower - Isometric View - White Background 01.jpg.jpeg"),
+    image: SNOW_BLOWER_FEATURED_IMAGE,
     alt: "Chore Blower autonomous snow blower clearing walkways and parking lots",
+    imageClassName:
+      "object-contain object-center p-1 sm:object-cover sm:object-[58%_center] sm:p-0",
     titleBrand: "Chore",
     titleName: "Blower",
     subtitle: "WINTER HAS BEEN HANDLED",
@@ -145,13 +147,26 @@ export const productTabShowcase = [
     tabLabel: "LEAF CARE",
     image: chorecollectorAsset("Leaf Collector - Isometric View - White Background 01.jpg.jpeg"),
     alt: "Chore Collector autonomous leaf collector for parks and commercial properties",
+    imageClassName:
+      "object-contain object-center p-3 sm:object-cover sm:object-[68%_center] sm:p-0",
     titleBrand: "Chore",
     titleName: "Collector",
     subtitle: "AUTUMN HAS BEEN HANDLED",
     subtitleAccent: "AUTUMN",
     href: "/product/chorecollector",
   },
-] as const;
+] as const satisfies ReadonlyArray<{
+  id: string;
+  tabLabel: string;
+  image: string;
+  alt: string;
+  imageClassName: string;
+  titleBrand: string;
+  titleName: string;
+  subtitle: string;
+  subtitleAccent: string;
+  href: string;
+}>;
 
 export const technologySection = {
   eyebrow: "Our Technologies",
@@ -175,7 +190,7 @@ export const spatialAwarenessSection = {
   headline: "360° SPATIAL AWARENESS.",
   description:
     "Equipped with overlapping sensor fields, the platform continuously monitors its environment in every direction. This comprehensive architecture ensures reliable obstacle detection and safe navigation through complex outdoor spaces.",
-  image: "/Sensor Stack.png",
+  image: "/Sensor Stack Image New.png",
   imageAlt:
     "CHORE robot with overlapping sensor fields scanning its outdoor environment",
 };
@@ -186,6 +201,22 @@ export const obstacleNavigationSection = {
   description:
     "Seamlessly navigating the unexpected, real-time sensor mapping and instant path correction keep every mission moving forward.",
   video: "ChoreRobot_Dynamic_Obstacles_Navigation (1).mp4",
+};
+
+export const patentedSecureLockSection = {
+  eyebrow: "Modular Design",
+  headline: "PATENTED SECURE LOCK.",
+  description:
+    "Our proprietary, in-house design allows you to swap modules instantly. No tools required.",
+  video: "Video Project 7.mp4",
+};
+
+export const dynamicStabilitySection = {
+  eyebrow: "Suspension System",
+  headline: "DYNAMIC STABILITY.",
+  description:
+    "A custom-engineered suspension system that absorbs harsh impacts, keeping the autonomous core perfectly level for flawless sensor accuracy.",
+  video: "Main Robot Exploded View.43.mp4",
 };
 
 export const fleetManagementSection = {
@@ -247,19 +278,19 @@ export const newsletterSection = {
 
 export const footerLinks = {
   products: [
-    { label: "CHORE MOWER", href: "/product/choremower" },
-    { label: "CHORE BLOWER", href: "/product/choreblower" },
-    { label: "CHORE IRRIGATOR", href: "/product/choreirrigator" },
-    { label: "CHORE COLLECTOR", href: "/product/chorecollector" },
-    { label: "CHORE PLOW", href: "/product/choreplow" },
-    { label: "CHORE MOPPER", href: "/product/choremopper" },
-    { label: "CHORE LOADER", href: "/products" },
-    { label: "CHORE PATROL", href: "/products" },
+    { label: "Chore Mower", href: "/product/choremower" },
+    { label: "Chore Blower", href: "/product/choreblower" },
+    { label: "Chore Irrigator", href: "/product/choreirrigator" },
+    { label: "Chore Collector", href: "/product/chorecollector" },
+    { label: "Chore Plow", href: "/product/choreplow" },
+    { label: "Chore Mopper", href: "/product/choremopper" },
+    { label: "Chore Loader", href: "/products" },
+    { label: "Chore Patrol", href: "/products" },
   ],
   company: [
     { label: "About", href: "/about" },
     { label: "Technology", href: "/technology" },
-    { label: "Careers", href: "#careers" },
+    { label: "Careers", href: "/careers" },
     { label: "Stories", href: "#stories" },
   ],
   support: [
@@ -272,16 +303,17 @@ export const footerLinks = {
     { label: "Privacy Policy", href: "#privacy" },
   ],
   social: [
-    { label: "LinkedIn", href: "https://linkedin.com" },
-    { label: "YouTube", href: "https://youtube.com" },
-    { label: "Instagram", href: "https://instagram.com" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/chore-robotics/?viewAsMember=true" },
+    { label: "YouTube", href: "https://youtube.com/@chorerobotics?si=3qsphW9ZEHq5Y1Vr" },
+    { label: "Instagram", href: "https://www.instagram.com/chorerobotics" },
     { label: "TikTok", href: "https://tiktok.com" },
-    { label: "X", href: "https://x.com" },
+    { label: "X", href: "https://x.com/chorerobotics/status/2084009247994691725?s=20" },
   ],
 };
 
 export const navLinks = [
   { label: "Technology", href: "/technology" },
   { label: "About", href: "/about" },
-  { label: "Investor", href: "#investors" },
+  { label: "Careers", href: "/careers" },
+  { label: "Investors", href: "#investors" },
 ];

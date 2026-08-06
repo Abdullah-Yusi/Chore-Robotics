@@ -1,10 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { type ReactNode } from "react";
-import { useIsClient } from "@/hooks/useIsClient";
 import { aboutPage } from "@/data/about";
 import { footerLinks } from "@/data/landing";
 
@@ -21,9 +18,11 @@ type SocialIconProps = {
 function FooterColumn({
   title,
   links,
+  orangeHover = false,
 }: {
   title: string;
   links: { label: string; href: string }[];
+  orangeHover?: boolean;
 }) {
   return (
     <div>
@@ -35,7 +34,9 @@ function FooterColumn({
           <li key={link.label}>
             <Link
               href={link.href}
-              className="font-body text-sm text-muted transition-colors hover:text-foreground"
+              className={`font-body text-sm text-muted transition-colors ${
+                orangeHover ? "hover:text-orange" : "hover:text-foreground"
+              }`}
             >
               {link.label}
             </Link>
@@ -110,44 +111,15 @@ const socialIconMap = {
 } as const;
 
 export default function Footer({ showAddress = false }: FooterProps) {
-  const { resolvedTheme } = useTheme();
-  const mounted = useIsClient();
   const copyrightYear = new Date().getFullYear();
-
-  const isLight = mounted && resolvedTheme === "light";
 
   return (
     <footer className="border-t border-border bg-background px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20 2xl:px-16">
       <div className="landing-container">
-        <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
-          <div className="max-w-sm">
-            <Link
-              href="/"
-              aria-label="Go to CHORE homepage"
-              className="inline-flex transition-opacity hover:opacity-80"
-            >
-              <Image
-                src={
-                  isLight
-                    ? "/svgs/final monogram black.svg"
-                    : "/svgs/final monogram.svg"
-                }
-                alt="CHORE"
-                width={80}
-                height={80}
-                className="h-14 w-auto opacity-90 sm:h-16 lg:h-[72px]"
-              />
-            </Link>
-            <p className="mt-6 font-body text-sm text-muted">
-              Chore Robotics, Inc. (C) {copyrightYear}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 sm:gap-10 lg:gap-16">
-            <FooterColumn title="Products" links={footerLinks.products} />
-            <FooterColumn title="Company" links={footerLinks.company} />
-            <FooterColumn title="Support" links={footerLinks.support} />
-          </div>
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 sm:gap-10 lg:gap-16">
+          <FooterColumn title="Products" links={footerLinks.products} orangeHover />
+          <FooterColumn title="Company" links={footerLinks.company} />
+          <FooterColumn title="Support" links={footerLinks.support} />
         </div>
 
         <div className="mt-12 border-t border-border pt-8">
@@ -170,6 +142,9 @@ export default function Footer({ showAddress = false }: FooterProps) {
                 </p>
               ) : null}
               <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                <span className="font-body text-sm text-muted">
+                  Chore Robotics, Inc. (C) {copyrightYear}
+                </span>
                 {footerLinks.legal.map((link) => (
                   <Link
                     key={link.label}

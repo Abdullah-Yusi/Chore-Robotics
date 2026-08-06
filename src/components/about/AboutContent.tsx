@@ -9,11 +9,9 @@ import AboutTimelineVideo from "@/components/about/AboutTimelineVideo";
 function SectionText({
   section,
   children,
-  hasVideo = false,
 }: {
   section: AboutSection;
   children: ReactNode;
-  hasVideo?: boolean;
 }) {
   const { ref, isVisible } = useInView<HTMLElement>();
 
@@ -36,25 +34,6 @@ function SectionText({
       <div className="mt-5 space-y-5 font-body text-[15px] leading-relaxed text-muted sm:text-base sm:leading-relaxed">
         {children}
       </div>
-
-      {hasVideo ? (
-        <a
-          href={`#video-${section.id}`}
-          className="mt-6 inline-flex items-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.14em] text-orange transition-colors hover:text-orange/80 sm:text-[13px]"
-        >
-          <span className="h-px w-6 bg-orange/60" />
-          View chapter video
-          <svg className="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" aria-hidden>
-            <path
-              d="M8 3v10M8 13l-4-4M8 13l4-4"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </a>
-      ) : null}
     </article>
   );
 }
@@ -64,11 +43,9 @@ function hasSectionVideo(section: AboutSection): section is AboutSectionWithVide
 }
 
 function renderSectionContent(section: AboutSection) {
-  const showVideo = hasSectionVideo(section);
-
   if ("bullets" in section) {
     return (
-      <SectionText section={section} hasVideo={showVideo}>
+      <SectionText section={section}>
         <ul className="space-y-3">
           {section.bullets.map((bullet) => (
             <li key={bullet} className="flex gap-3">
@@ -83,7 +60,7 @@ function renderSectionContent(section: AboutSection) {
 
   if ("paragraphs" in section) {
     return (
-      <SectionText section={section} hasVideo={showVideo}>
+      <SectionText section={section}>
         {section.paragraphs.map((paragraph) => (
           <p key={paragraph.slice(0, 40)}>{paragraph}</p>
         ))}
@@ -128,7 +105,6 @@ export default function AboutContent() {
                         title: section.title,
                         video: section.video,
                       }}
-                      linkedTitle={section.title}
                     />
                   ) : null}
                 </div>

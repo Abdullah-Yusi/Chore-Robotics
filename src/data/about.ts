@@ -18,19 +18,8 @@ export const aboutPage = {
   },
   sections: [
     {
-      id: "why-we-started",
-      chapter: "01",
-      title: "Why We Started",
-      video: "Main Robot Exploded View.57.mp4" as string | null,
-      paragraphs: [
-        "Outdoor maintenance is broken.",
-        "Property owners rely on multiple expensive machines for different jobs. Most are used only a few times a year, require skilled operators, and depend on a workforce that is becoming harder and more expensive to find.",
-        "We started Chore Robotics to replace that outdated model with one intelligent robotic platform that works autonomously, adapts to different tasks, and delivers reliable results every day.",
-      ],
-    },
-    {
       id: "problem",
-      chapter: "02",
+      chapter: "01",
       title: "The Problem We Solve",
       video: "chore_warehouse_perception_video-new.mp4" as string | null,
       paragraphs: [
@@ -41,16 +30,27 @@ export const aboutPage = {
       ],
     },
     {
+      id: "why-we-started",
+      chapter: "02",
+      title: "Why We Started",
+      video: "Main Robot Exploded View.57.mp4" as string | null,
+      paragraphs: [
+        "Outdoor maintenance is broken.",
+        "Property owners rely on multiple expensive machines for different jobs. Most are used only a few times a year, require skilled operators, and depend on a workforce that is becoming harder and more expensive to find.",
+        "We started Chore Robotics to replace that outdated model with one intelligent robotic platform that works autonomously, adapts to different tasks, and delivers reliable results every day.",
+      ],
+    },
+    {
       id: "different",
       chapter: "03",
       title: "What Makes Us Different",
       bullets: [
-        "We did not build another single purpose robot.",
-        "We built a modular robotic platform that can perform multiple maintenance tasks by changing attachments.",
-        "Industrial grade hardware built for demanding environments.",
-        "Intelligent autonomous navigation designed for real world reliability.",
-        "One platform that replaces multiple expensive machines.",
-        "Continuous software improvements that make every robot smarter over time.",
+        "Swap modules to adapt one platform to any seasonal task.",
+        "One intelligent system replaces a fleet of expensive machines.",
+        "Brushless direct-drive chassis delivers power for heavy-duty work.",
+        "Advanced navigation provides reliable awareness in real-world conditions.",
+        "Continuous software updates make every robot smarter over time.",
+        "We design and build all hardware and software in America.",
       ],
     },
     {
@@ -68,9 +68,8 @@ export const aboutPage = {
       chapter: "05",
       title: "Expanding the Platform",
       paragraphs: [
-        "Today, we are expanding our modular ecosystem so one robot can handle more jobs across more industries.",
-        "Our platform is built for residential communities, commercial properties, municipalities, schools, airports, warehouses, factories, hospitals, and many other environments.",
-        "Every new attachment extends the robot's capabilities, giving customers more value without investing in another machine.",
+        "Today, we are expanding our modular ecosystem so a single robot can conquer more industries.",
+        "From residential campuses and commercial airports to heavy-duty warehouses, every new attachment instantly multiplies your capabilities without the need to buy another machine.",
       ],
     },
     {

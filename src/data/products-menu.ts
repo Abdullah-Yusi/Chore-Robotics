@@ -1,4 +1,4 @@
-import { getProductMenuImage } from "./product-details";
+import { getProductMenuImage, productDetails } from "./product-details";
 
 export type ProductItem = {
   id: string;
@@ -12,53 +12,28 @@ export type ProductCategory = {
   products: ProductItem[];
 };
 
+function menuProduct(id: string): ProductItem {
+  return {
+    id,
+    name: productDetails[id].name,
+    image: getProductMenuImage(id),
+  };
+}
+
 export const productCategories: ProductCategory[] = [
   {
     id: "lawn-care",
     label: "Lawn Care",
-    products: [
-      {
-        id: "p10",
-        name: "CHORE MOWER",
-        image: getProductMenuImage("p10"),
-      },
-      {
-        id: "p6",
-        name: "CHORE COLLECTOR",
-        image: getProductMenuImage("p6"),
-      },
-      {
-        id: "p9",
-        name: "CHORE IRRIGATOR",
-        image: getProductMenuImage("p9"),
-      },
-    ],
+    products: [menuProduct("p10"), menuProduct("p6"), menuProduct("p9")],
   },
   {
     id: "floor-care",
     label: "Floor Care",
-    products: [
-      {
-        id: "p2",
-        name: "CHORE MOPPER",
-        image: getProductMenuImage("p2"),
-      },
-    ],
+    products: [menuProduct("p2")],
   },
   {
     id: "snow-removal",
     label: "Snow Removal",
-    products: [
-      {
-        id: "p4",
-        name: "CHORE PLOW",
-        image: getProductMenuImage("p4"),
-      },
-      {
-        id: "p5",
-        name: "CHORE BLOWER",
-        image: getProductMenuImage("p5"),
-      },
-    ],
+    products: [menuProduct("p4"), menuProduct("p5")],
   },
 ];

@@ -20,6 +20,13 @@ const COLLECTOR_GALLERY_IMAGES = [
 const choreblowerAsset = (filename: string) =>
   `/choreblower/${encodeURIComponent(filename)}`;
 
+const publicRootAsset = (filename: string) =>
+  `/${encodeURIComponent(filename)}`;
+
+export const SNOW_BLOWER_FEATURED_IMAGE = choreblowerAsset(
+  "Snow blower - Isometric View - White Background 01.jpg.jpeg",
+);
+
 const chorirrigatorAsset = (filename: string) =>
   `/chorirrigator/${encodeURIComponent(filename)}`;
 
@@ -69,7 +76,7 @@ export const ACTIVE_PRODUCT_IDS = [
 export const productDetails: Record<string, ProductDetailData> = {
   p10: {
     id: "p10",
-    name: "CHORE MOWER",
+    name: "Chore Mower",
     tagline: "Autonomous lawn mowing for residential and commercial properties.",
     category: "Lawn Care",
     price: 4299,
@@ -98,7 +105,7 @@ export const productDetails: Record<string, ProductDetailData> = {
     ],
     images: [...CHOREMOWER_NEW_IMAGES],
     whatsIncluded: [
-      "CHORE MOWER Lawn Mowing Module",
+      "Chore Mower Lawn Mowing Module",
       "Quick-Release Mounting Hardware Pack",
       "Blade & Deck Maintenance Kit",
       "Comprehensive Installation & Operation Manual",
@@ -115,7 +122,7 @@ export const productDetails: Record<string, ProductDetailData> = {
   },
   p2: {
     id: "p2",
-    name: "CHORE MOPPER",
+    name: "Chore Mopper",
     tagline: "Autonomous floor cleaning for warehouses and commercial facilities.",
     category: "Floor Care",
     price: 5499,
@@ -144,7 +151,7 @@ export const productDetails: Record<string, ProductDetailData> = {
     ],
     images: [...COLLECTOR_GALLERY_IMAGES],
     whatsIncluded: [
-      "CHORE MOPPER Floor Mopping Module",
+      "Chore Mopper Floor Mopping Module",
       "Quick-Release Mounting Hardware Pack",
       "Mop Pad & Fluid Reservoir Kit",
       "Comprehensive Installation & Operation Manual",
@@ -161,7 +168,7 @@ export const productDetails: Record<string, ProductDetailData> = {
   },
   p4: {
     id: "p4",
-    name: "CHORE PLOW",
+    name: "Chore Plow",
     tagline: "Autonomous snow plowing for roads, driveways, and parking lots.",
     category: "Snow Removal",
     price: 1499,
@@ -194,7 +201,7 @@ export const productDetails: Record<string, ProductDetailData> = {
       snowplowerAsset("MR + Snow Plow - White Background -Showcase_01.jpg.jpeg"),
     ],
     whatsIncluded: [
-      "CHORE PLOW Snow Plow Module",
+      "Chore Plow Snow Plow Module",
       "Replacement Polyurethane Scraper Bar",
       "Quick-Release Mounting Hardware Pack",
       "Cold-Weather Wiring Harness",
@@ -224,7 +231,7 @@ export const productDetails: Record<string, ProductDetailData> = {
   },
   p5: {
     id: "p5",
-    name: "CHORE BLOWER",
+    name: "Chore Blower",
     tagline: "Autonomous snow removal for sidewalks, walkways, and commercial properties.",
     category: "Snow Removal",
     price: 2499,
@@ -252,13 +259,14 @@ export const productDetails: Record<string, ProductDetailData> = {
       },
     ],
     images: [
-      choreblowerAsset("Snow blower - Isometric View - White Background 01.jpg.jpeg"),
+      SNOW_BLOWER_FEATURED_IMAGE,
+      publicRootAsset("Snow blower.38.jpg.jpeg"),
       choreblowerAsset("Snow blower - Side View - White Background 01.jpg.jpeg"),
       choreblowerAsset("Snow blower - Top View - White Background 01.jpg.jpeg"),
       choreblowerAsset("Snow blower - Showcase - Isometric View - White Background 01.jpg.jpeg"),
     ],
     whatsIncluded: [
-      "CHORE BLOWER Snow Blower Module",
+      "Chore Blower Snow Blower Module",
       "High-Performance Discharge Chute Assembly",
       "Quick-Release Mounting Hardware Pack",
       "Cold-Weather Wiring Harness",
@@ -288,7 +296,7 @@ export const productDetails: Record<string, ProductDetailData> = {
   },
   p6: {
     id: "p6",
-    name: "CHORE COLLECTOR",
+    name: "Chore Collector",
     tagline: "Autonomous leaf collection for parks, campuses, and commercial properties.",
     category: "Lawn Care",
     price: 1899,
@@ -316,7 +324,7 @@ export const productDetails: Record<string, ProductDetailData> = {
     ],
     images: [...COLLECTOR_GALLERY_IMAGES],
     whatsIncluded: [
-      "CHORE COLLECTOR Leaf Collector Module",
+      "Chore Collector Leaf Collector Module",
       "Compact High-Capacity Collection Bag",
       "Quick-Release Mounting Hardware Pack",
       "Roller & Vacuum Brush Assembly",
@@ -343,7 +351,7 @@ export const productDetails: Record<string, ProductDetailData> = {
   },
   p9: {
     id: "p9",
-    name: "CHORE IRRIGATOR",
+    name: "Chore Irrigator",
     tagline: "Precise, uniform irrigation for lawns, parks, and commercial landscapes.",
     category: "Lawn Care",
     price: 2199,
@@ -376,7 +384,7 @@ export const productDetails: Record<string, ProductDetailData> = {
       chorirrigatorAsset("Irrigation Module - Show case - Isometric View + White Background.jpg.jpeg"),
     ],
     whatsIncluded: [
-      "CHORE IRRIGATOR Irrigation Module",
+      "Chore Irrigator Irrigation Module",
       "Dual Boom Spray Assembly",
       "Quick-Release Mounting Hardware Pack",
       "Fluid Line & Nozzle Calibration Kit",
@@ -410,7 +418,7 @@ const productMenuImages: Record<string, string> = {
   p10: CHOREMOWER_NEW_IMAGES[0],
   p2: COLLECTOR_GALLERY_IMAGES[0],
   p4: snowplowerAsset("Snow Plow - White Background - Isometric_View_01.jpg.jpeg"),
-  p5: choreblowerAsset("Snow blower - Isometric View - White Background 01.jpg.jpeg"),
+  p5: SNOW_BLOWER_FEATURED_IMAGE,
   p6: chorecollectorAsset("Leaf Collector - Isometric View - White Background 01.jpg.jpeg"),
   p9: chorirrigatorAsset("Irrigation Module - Isometric View + White Background.jpg.jpeg"),
 };

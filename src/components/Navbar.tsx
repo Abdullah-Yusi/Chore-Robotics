@@ -141,16 +141,18 @@ export default function Navbar() {
             >
               <button
                 type="button"
-                className={`relative cursor-pointer font-body text-[16px] font-medium tracking-[0.06em] transition-opacity hover:opacity-70 ${navText}`}
+                className={`relative cursor-pointer font-body text-[16px] font-medium tracking-[0.06em] transition-colors duration-300 hover:text-orange ${
+                  productsOpen ? "text-orange" : navText
+                }`}
                 aria-expanded={productsOpen}
                 aria-haspopup="true"
               >
                 Products
               </button>
               <span
-                className={`absolute bottom-0 left-0 h-[2px] transition-all duration-300 ease-out ${
-                  useDarkNav ? "bg-white" : "bg-foreground"
-                } ${productsOpen ? "w-full opacity-100" : "w-0 opacity-0"}`}
+                className={`absolute bottom-0 left-0 h-[2px] bg-orange transition-all duration-300 ease-out ${
+                  productsOpen ? "w-full opacity-100" : "w-0 opacity-0"
+                }`}
               />
             </li>
 
@@ -236,7 +238,9 @@ export default function Navbar() {
                   <li>
                     <button
                       type="button"
-                      className={`flex w-full items-center justify-between py-4 font-body text-base font-medium ${navText}`}
+                      className={`flex w-full items-center justify-between py-4 font-body text-base font-medium transition-colors duration-300 hover:text-orange ${
+                        mobileProductsOpen ? "text-orange" : navText
+                      }`}
                       aria-expanded={mobileProductsOpen}
                       onClick={() => setMobileProductsOpen((open) => !open)}
                     >
@@ -273,7 +277,7 @@ export default function Navbar() {
                                 <li key={product.id}>
                                   <Link
                                     href={`/product/${PRODUCT_SLUGS[product.id] ?? product.id}`}
-                                    className={`block rounded-lg py-2.5 pl-3 font-body text-sm ${navTextMuted} transition-colors hover:bg-[color-mix(in_srgb,var(--foreground)_6%,transparent)] hover:text-foreground`}
+                                    className={`block rounded-lg py-2.5 pl-3 font-body text-sm ${navTextMuted} transition-colors hover:text-orange hover:bg-orange/10`}
                                     onClick={closeMobileMenu}
                                   >
                                     {product.name}

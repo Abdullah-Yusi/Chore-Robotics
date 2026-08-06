@@ -14,10 +14,7 @@ export default function AboutHero() {
       }`}
     >
       <div className="mx-auto max-w-[1440px]">
-        <p className="font-body text-xs font-bold uppercase tracking-[0.24em] text-orange sm:text-[13px]">
-          {aboutPage.intro.eyebrow}
-        </p>
-        <h1 className="mt-4 font-heading text-[clamp(1.65rem,5vw,3.5rem)] font-semibold uppercase leading-[1.05] tracking-[0.04em] text-foreground sm:text-[clamp(2rem,5vw,3.5rem)]">
+        <h1 className="font-heading text-[clamp(1.65rem,5vw,3.5rem)] font-semibold uppercase leading-[1.05] tracking-[0.04em] text-foreground sm:text-[clamp(2rem,5vw,3.5rem)]">
           {aboutPage.intro.headline}
         </h1>
       </div>

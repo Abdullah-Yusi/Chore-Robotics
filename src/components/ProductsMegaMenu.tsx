@@ -60,8 +60,10 @@ export default function ProductsMegaMenu({
                       type="button"
                       onMouseEnter={() => setActiveCategoryId(category.id)}
                       onFocus={() => setActiveCategoryId(category.id)}
-                      className={`flex w-full items-center justify-between px-4 py-3.5 text-left font-body text-[14px] font-medium ${text} transition-colors duration-200 ${
-                        isActive ? activeBg : hoverBg
+                      className={`flex w-full items-center justify-between px-4 py-3.5 text-left font-body text-[14px] font-medium transition-colors duration-200 ${
+                        isActive
+                          ? `${activeBg} text-orange`
+                          : `${hoverBg} ${text} hover:text-orange`
                       }`}
                     >
                       <span>{category.label}</span>
@@ -103,7 +105,7 @@ export default function ProductsMegaMenu({
                 <Link
                   key={product.id}
                   href={`/product/${PRODUCT_SLUGS[product.id] ?? product.id}`}
-                  className={`group flex flex-col border ${border} ${cardBg} transition-opacity hover:opacity-90`}
+                  className={`group flex flex-col border ${border} ${cardBg} transition-all duration-300 hover:border-orange/35 hover:shadow-[0_12px_32px_rgba(255,132,0,0.08)]`}
                 >
                   <div className="relative aspect-[4/3] w-full bg-white">
                     <Image
@@ -115,7 +117,7 @@ export default function ProductsMegaMenu({
                     />
                   </div>
                   <p
-                    className={`px-3 pb-4 pt-2 text-center font-body text-[10px] font-bold uppercase leading-snug tracking-[0.04em] ${text} sm:text-[11px]`}
+                    className={`px-3 pb-4 pt-2 text-center font-body text-xs font-semibold leading-snug tracking-[0.01em] ${text} transition-colors duration-300 group-hover:text-orange sm:text-[13px]`}
                   >
                     {product.name}
                   </p>

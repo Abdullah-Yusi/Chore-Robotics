@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import DynamicStabilitySection from "@/components/landing/DynamicStabilitySection";
 import FleetManagementSection from "@/components/landing/FleetManagementSection";
 import Footer from "@/components/landing/Footer";
 import ObstacleNavigationSection from "@/components/landing/ObstacleNavigationSection";
+import PatentedSecureLockSection from "@/components/landing/PatentedSecureLockSection";
 import SpatialAwarenessSection from "@/components/landing/SpatialAwarenessSection";
 import TechnologySection from "@/components/landing/TechnologySection";
 import Navbar from "@/components/Navbar";
@@ -20,6 +22,8 @@ export default function TechnologyPage() {
         <TechnologySection />
         <SpatialAwarenessSection />
         <ObstacleNavigationSection />
+        <PatentedSecureLockSection />
+        <DynamicStabilitySection />
         <FleetManagementSection />
       </main>
       <Footer />

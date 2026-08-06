@@ -393,9 +393,7 @@ body {
 }
 
 .hero-slide-headline {
-  text-shadow:
-    2px 3px 0 rgba(0, 0, 0, 0.88),
-    0 6px 28px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .reveal {

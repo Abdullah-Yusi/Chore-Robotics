@@ -21,8 +21,8 @@ export default function ProductShowcase() {
           <p className="font-body text-[11px] font-bold uppercase tracking-[0.24em] text-orange">
             Modular Attachments
           </p>
-          <h1 className="mt-2 font-heading text-[clamp(1.75rem,3.5vw,2.75rem)] font-semibold uppercase tracking-[0.03em] text-foreground">
-            CHORE Products
+          <h1 className="mt-2 font-heading text-[clamp(1.75rem,3.5vw,2.75rem)] font-semibold tracking-[0.03em] text-foreground">
+            Chore Products
           </h1>
           <p className="mt-3 font-body text-[15px] leading-relaxed text-muted sm:text-base">
             One platform, every chore — explore our modular attachments.
@@ -51,7 +51,7 @@ export default function ProductShowcase() {
                 <p className="font-body text-[10px] font-bold uppercase tracking-[0.16em] text-orange">
                   {product.category}
                 </p>
-                <h2 className="mt-2 font-heading text-lg font-semibold uppercase tracking-[0.03em] text-foreground transition-colors group-hover:text-orange">
+                <h2 className="mt-2 font-heading text-base font-semibold tracking-[0.01em] text-foreground transition-colors group-hover:text-orange sm:text-lg">
                   {product.name}
                 </h2>
                 <p className="mt-2 font-body text-[13px] leading-relaxed text-subtle">

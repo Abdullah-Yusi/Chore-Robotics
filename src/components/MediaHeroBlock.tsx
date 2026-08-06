@@ -12,6 +12,7 @@ type MediaHeroBlockProps = {
   ariaLabel?: string;
   className?: string;
   compact?: boolean;
+  headlineClassName?: string;
 };
 
 export default function MediaHeroBlock({
@@ -23,6 +24,7 @@ export default function MediaHeroBlock({
   ariaLabel,
   className = "",
   compact = false,
+  headlineClassName = "",
 }: MediaHeroBlockProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoSrc = video ? `/${encodeURIComponent(video.replace(/^\//, ""))}` : null;
@@ -76,8 +78,8 @@ export default function MediaHeroBlock({
             <h2
               className={
                 compact
-                  ? "font-heading text-[clamp(1.2rem,3.5vw,2.5rem)] font-semibold uppercase leading-[1.05] tracking-[0.03em] text-white sm:text-[clamp(1.35rem,3.5vw,2.5rem)]"
-                  : "font-heading text-[clamp(1.35rem,4vw,3.25rem)] font-semibold uppercase leading-[1.05] tracking-[0.03em] text-white sm:text-[clamp(1.75rem,4.5vw,3.25rem)]"
+                  ? `font-heading text-[clamp(1.2rem,3.5vw,2.5rem)] font-semibold uppercase leading-[1.05] tracking-[0.03em] text-white sm:text-[clamp(1.35rem,3.5vw,2.5rem)] ${headlineClassName}`
+                  : `font-heading text-[clamp(1.35rem,4vw,3.25rem)] font-semibold uppercase leading-[1.05] tracking-[0.03em] text-white sm:text-[clamp(1.75rem,4.5vw,3.25rem)] ${headlineClassName}`
               }
             >
               {headline}

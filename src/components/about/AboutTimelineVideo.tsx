@@ -10,12 +10,10 @@ type AboutTimelineVideoProps = {
     title: string;
     video: string | null;
   };
-  linkedTitle: string;
 };
 
 export default function AboutTimelineVideo({
   item,
-  linkedTitle,
 }: AboutTimelineVideoProps) {
   const { ref, isVisible } = useInView<HTMLDivElement>();
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -38,10 +36,6 @@ export default function AboutTimelineVideo({
       className={`scroll-mt-28 ${isVisible ? "reveal is-visible" : "reveal"}`}
       aria-labelledby={`section-${item.id}`}
     >
-      <p className="mb-3 font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-subtle">
-        Linked to: {linkedTitle}
-      </p>
-
       <div className="relative overflow-hidden rounded-2xl border border-border shadow-[0_16px_48px_rgba(0,0,0,0.12)] dark:shadow-[0_16px_48px_rgba(0,0,0,0.35)]">
         <div className="relative aspect-[16/10] min-h-[220px] w-full sm:min-h-[280px]">
           {videoSrc ? (
@@ -54,7 +48,7 @@ export default function AboutTimelineVideo({
               playsInline
               preload="auto"
               className="absolute inset-0 h-full w-full object-cover object-center"
-              aria-label={linkedTitle}
+              aria-label={item.title}
             />
           ) : (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-surface-elevated">

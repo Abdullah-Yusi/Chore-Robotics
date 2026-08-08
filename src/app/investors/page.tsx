@@ -11,7 +11,7 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
   title: "Investors — CHORE",
   description:
-    "Investor relations for Chore Robotics — press releases, events, email alerts, and information requests for partners and analysts.",
+    "Investor relations for Chore Robotics — press releases, events, email alerts, and information requests for partners and analysts",
 };
 
 export default function InvestorsPage() {

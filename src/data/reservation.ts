@@ -8,12 +8,12 @@ export const reservationPage = {
   eyebrow: "Pre-Order",
   headline: "RESERVE YOUR CHORE",
   description:
-    "Secure your spot with a refundable deposit. Complete the form below and our team will reach out to confirm your module selection and delivery timeline.",
+    "Secure your spot with a refundable deposit Complete the form below and our team will reach out to confirm your module selection and delivery timeline",
   depositNote: "Minimum reservation deposit: $50 · Fully refundable until configuration",
   submitLabel: "Submit Pre-Order",
   successTitle: "Pre-Order Received",
   successDescription:
-    "Thank you for reserving your CHORE. A confirmation email with next steps is on its way.",
+    "Thank you for reserving your CHORE A confirmation email with next steps is on its way",
 } as const;
 
 export const reservationProducts = ACTIVE_PRODUCT_IDS.map((id) => ({

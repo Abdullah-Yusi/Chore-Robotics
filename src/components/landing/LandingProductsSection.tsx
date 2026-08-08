@@ -40,7 +40,7 @@ export default function LandingProductsSection() {
               <Link
                 key={product.id}
                 href={product.href}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface-elevated transition-all duration-500 hover:border-orange/35 hover:shadow-[0_24px_60px_rgba(255,132,0,0.08),0_8px_32px_rgba(0,0,0,0.15)]"
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface-elevated transition-all duration-500 hover:border-border hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
                 style={{ transitionDelay: `${index * 80}ms` }}
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-[var(--media-well)]">
@@ -58,7 +58,7 @@ export default function LandingProductsSection() {
                     <span className="font-body text-[10px] font-bold tabular-nums text-subtle">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="rounded-full border border-orange/35 bg-background/90 px-3 py-1 font-body text-[10px] font-bold uppercase tracking-[0.14em] text-orange backdrop-blur-md">
+                    <span className="rounded-full border border-border bg-background/90 px-3 py-1 font-body text-[10px] font-bold uppercase tracking-[0.14em] text-orange backdrop-blur-md">
                       {product.category}
                     </span>
                   </div>

@@ -12,11 +12,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "CHORE — Modular Yard Robot",
   description:
-    "One platform for every season. Smart, autonomous robotics built for the yard you love.",
+    "One platform for every season Smart, autonomous robotics built for the yard you love",
   icons: {
-    icon: "/svgs/final monogram.svg",
-    shortcut: "/svgs/final monogram.svg",
-    apple: "/svgs/final monogram.svg",
+    icon: "/logo-chore.png",
+    shortcut: "/logo-chore.png",
+    apple: "/logo-chore.png",
   },
 };
 

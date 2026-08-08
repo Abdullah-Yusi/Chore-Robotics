@@ -61,20 +61,20 @@ export default function ReservationForm() {
   const validate = () => {
     const nextErrors: Partial<Record<keyof ReservationFormData, string>> = {};
 
-    if (!form.fullName.trim()) nextErrors.fullName = "Full name is required.";
-    if (!isValidEmail(form.email)) nextErrors.email = "Enter a valid email address.";
+    if (!form.fullName.trim()) nextErrors.fullName = "Full name is required";
+    if (!isValidEmail(form.email)) nextErrors.email = "Enter a valid email address";
     if (!isValidUsPhone(form.phone)) {
-      nextErrors.phone = "Enter a valid 10-digit US phone number.";
+      nextErrors.phone = "Enter a valid 10-digit US phone number";
     }
     if (!form.streetAddress.trim()) {
-      nextErrors.streetAddress = "Street address is required.";
+      nextErrors.streetAddress = "Street address is required";
     }
-    if (!form.city.trim()) nextErrors.city = "City is required.";
-    if (!form.state) nextErrors.state = "Select a state.";
+    if (!form.city.trim()) nextErrors.city = "City is required";
+    if (!form.state) nextErrors.state = "Select a state";
     if (!isValidUsZip(form.zipCode)) {
-      nextErrors.zipCode = "Enter a valid ZIP code (12345 or 12345-6789).";
+      nextErrors.zipCode = "Enter a valid ZIP code (12345 or 12345-6789)";
     }
-    if (!form.productSlug) nextErrors.productSlug = "Select a product.";
+    if (!form.productSlug) nextErrors.productSlug = "Select a product";
 
     setErrors(nextErrors);
     return Object.keys(nextErrors).length === 0;
@@ -99,7 +99,7 @@ export default function ReservationForm() {
           isVisible ? "reveal is-visible" : "reveal"
         }`}
       >
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-orange/30 bg-orange/10">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-border bg-foreground/5">
           <svg
             className="h-8 w-8 text-orange"
             viewBox="0 0 24 24"
@@ -164,7 +164,7 @@ export default function ReservationForm() {
                 id="email"
                 type="email"
                 autoComplete="email"
-                placeholder="john.doe@email.com"
+                placeholder="johndoe@emailcom"
                 value={form.email}
                 onChange={(event) => updateField("email", event.target.value)}
                 className={inputClassName}

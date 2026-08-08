@@ -16,7 +16,7 @@ export default function InvestorEmailAlerts() {
     event.preventDefault();
 
     if (!isValidEmail(email)) {
-      setError("Enter a valid email address.");
+      setError("Enter a valid email address");
       return;
     }
 
@@ -33,13 +33,8 @@ export default function InvestorEmailAlerts() {
       }`}
     >
       <div className="mx-auto max-w-[1440px]">
-        <div className="relative overflow-hidden rounded-2xl border border-orange/25 bg-[linear-gradient(135deg,rgba(255,132,0,0.12)_0%,rgba(255,132,0,0.04)_45%,transparent_100%)] px-6 py-10 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-orange/10 blur-3xl"
-          />
-
-          <div className="relative mx-auto max-w-2xl text-center">
+        <div className="rounded-2xl border border-border bg-surface-elevated px-6 py-10 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
+          <div className="mx-auto max-w-2xl text-center">
             <p className="font-body text-[11px] font-bold uppercase tracking-[0.24em] text-orange">
               Investor Updates
             </p>

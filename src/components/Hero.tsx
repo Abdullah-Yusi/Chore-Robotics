@@ -7,18 +7,18 @@ import { ChevronLeft, ChevronRight } from "./icons";
 const slides = [
   {
     image: "/images/hero.jpg",
-    title: "THE MODULAR YARD ROBOT FOR EVERY SEASON.",
-    subtitle: "Smart, automated mowing keeps your lawn clean as it grows.",
+    title: "THE MODULAR YARD ROBOT FOR EVERY SEASON",
+    subtitle: "Smart, automated mowing keeps your lawn clean as it grows",
   },
   {
     image: "/images/hero.jpg",
-    title: "ONE PLATFORM. EVERY OUTDOOR TASK.",
-    subtitle: "Swap modules in seconds — mow, blow, plow, and more.",
+    title: "ONE PLATFORM EVERY OUTDOOR TASK",
+    subtitle: "Swap modules in seconds — mow, blow, plow, and more",
   },
   {
     image: "/images/hero.jpg",
-    title: "BUILT FOR YEAR-ROUND PERFORMANCE.",
-    subtitle: "Weather-ready robotics designed for your entire property.",
+    title: "BUILT FOR YEAR-ROUND PERFORMANCE",
+    subtitle: "Weather-ready robotics designed for your entire property",
   },
 ];
 

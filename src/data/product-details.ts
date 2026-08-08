@@ -77,7 +77,7 @@ export const productDetails: Record<string, ProductDetailData> = {
   p10: {
     id: "p10",
     name: "Chore Mower",
-    tagline: "Autonomous lawn mowing for residential and commercial properties.",
+    tagline: "Autonomous lawn mowing for residential and commercial properties",
     category: "Lawn Care",
     price: 4299,
     originalPrice: 4599,
@@ -85,22 +85,22 @@ export const productDetails: Record<string, ProductDetailData> = {
     rating: 4.9,
     reviewsCount: 24,
     description:
-      "Keep lawns pristine with the Chore Lawn Mower. Built for residential yards, campuses, and commercial landscapes, it delivers precise autonomous mowing with consistent cut quality. Intelligent navigation maps your property for efficient coverage while advanced obstacle detection keeps operation safe around people, pets, and landscape features. Reduce manual labor and maintain a professional finish week after week.",
+      "Keep lawns pristine with the Chore Lawn Mower Built for residential yards, campuses, and commercial landscapes, it delivers precise autonomous mowing with consistent cut quality Intelligent navigation maps your property for efficient coverage while advanced obstacle detection keeps operation safe around people, pets, and landscape features Reduce manual labor and maintain a professional finish week after week",
     features: [
       {
         title: "Intelligent Navigation",
         description:
-          "Maps your property for efficient mowing paths with consistent coverage and minimal missed strips.",
+          "Maps your property for efficient mowing paths with consistent coverage and minimal missed strips",
       },
       {
         title: "Advanced Obstacle Detection",
         description:
-          "Safely navigates around people, pets, trees, and landscape features without interrupting the job.",
+          "Safely navigates around people, pets, trees, and landscape features without interrupting the job",
       },
       {
         title: "Precision Cutting",
         description:
-          "Delivers a clean, even cut across varied terrain for a professional finish on every pass.",
+          "Delivers a clean, even cut across varied terrain for a professional finish on every pass",
       },
     ],
     images: [...CHOREMOWER_NEW_IMAGES],
@@ -123,7 +123,7 @@ export const productDetails: Record<string, ProductDetailData> = {
   p2: {
     id: "p2",
     name: "Chore Mopper",
-    tagline: "Autonomous floor cleaning for warehouses and commercial facilities.",
+    tagline: "Autonomous floor cleaning for warehouses and commercial facilities",
     category: "Floor Care",
     price: 5499,
     originalPrice: 5999,
@@ -131,22 +131,22 @@ export const productDetails: Record<string, ProductDetailData> = {
     rating: 4.9,
     reviewsCount: 15,
     description:
-      "Maintain cleaner, safer indoor environments with the Chore Floor Mopper. Designed for warehouses, factories, logistics centers, and commercial facilities, it delivers efficient autonomous floor cleaning with consistent results. Intelligent navigation ensures systematic coverage while minimizing missed areas. Advanced obstacle detection enables safe operation around equipment, pallets, and workspaces. Reduce manual labor, improve operational efficiency, and maintain high cleanliness standards. Built for reliable, continuous performance with minimal human intervention. Keep your facilities clean, productive, and ready for daily operations with smart autonomous cleaning.",
+      "Maintain cleaner, safer indoor environments with the Chore Floor Mopper Designed for warehouses, factories, logistics centers, and commercial facilities, it delivers efficient autonomous floor cleaning with consistent results Intelligent navigation ensures systematic coverage while minimizing missed areas Advanced obstacle detection enables safe operation around equipment, pallets, and workspaces Reduce manual labor, improve operational efficiency, and maintain high cleanliness standards Built for reliable, continuous performance with minimal human intervention Keep your facilities clean, productive, and ready for daily operations with smart autonomous cleaning",
     features: [
       {
         title: "Intelligent Navigation",
         description:
-          "Ensures systematic coverage across large floor plans while minimizing missed areas and redundant passes.",
+          "Ensures systematic coverage across large floor plans while minimizing missed areas and redundant passes",
       },
       {
         title: "Advanced Obstacle Detection",
         description:
-          "Enables safe operation around equipment, pallets, and active workspaces without interrupting daily operations.",
+          "Enables safe operation around equipment, pallets, and active workspaces without interrupting daily operations",
       },
       {
         title: "Autonomous Floor Cleaning",
         description:
-          "Delivers efficient, consistent cleaning results with minimal human intervention across commercial facilities.",
+          "Delivers efficient, consistent cleaning results with minimal human intervention across commercial facilities",
       },
     ],
     images: [...COLLECTOR_GALLERY_IMAGES],
@@ -169,29 +169,29 @@ export const productDetails: Record<string, ProductDetailData> = {
   p4: {
     id: "p4",
     name: "Chore Plow",
-    tagline: "Autonomous snow plowing for roads, driveways, and parking lots.",
+    tagline: "Autonomous snow plowing for roads, driveways, and parking lots",
     category: "Snow Removal",
     price: 1499,
     monthlyPayment: 124.90,
     rating: 4.8,
     reviewsCount: 11,
     description:
-      "Restore safe access after every snowfall with the Chore Snow Plower. Designed for roads, driveways, parking lots, and other paved surfaces, it delivers fast and efficient snow removal with minimal human intervention. Intelligent autonomous navigation ensures precise, consistent coverage across every route. Its advanced obstacle detection system enables safe operation in dynamic winter environments. Powerful plowing performance clears both fresh and compacted snow with ease. Reduce labor costs, improve operational efficiency, and keep critical pathways accessible. Built for dependable performance, the Chore Snow Plower helps maintain safe, clear surfaces throughout the winter season.",
+      "Restore safe access after every snowfall with the Chore Snow Plower Designed for roads, driveways, parking lots, and other paved surfaces, it delivers fast and efficient snow removal with minimal human intervention Intelligent autonomous navigation ensures precise, consistent coverage across every route Its advanced obstacle detection system enables safe operation in dynamic winter environments Powerful plowing performance clears both fresh and compacted snow with ease Reduce labor costs, improve operational efficiency, and keep critical pathways accessible Built for dependable performance, the Chore Snow Plower helps maintain safe, clear surfaces throughout the winter season",
     features: [
       {
         title: "Intelligent Autonomous Navigation",
         description:
-          "Ensures precise, consistent coverage across every route with minimal human intervention.",
+          "Ensures precise, consistent coverage across every route with minimal human intervention",
       },
       {
         title: "Advanced Obstacle Detection",
         description:
-          "Enables safe operation in dynamic winter environments with pedestrians, vehicles, and fixed obstacles.",
+          "Enables safe operation in dynamic winter environments with pedestrians, vehicles, and fixed obstacles",
       },
       {
         title: "Powerful Plowing Performance",
         description:
-          "Clears both fresh and compacted snow with ease for dependable access throughout the winter season.",
+          "Clears both fresh and compacted snow with ease for dependable access throughout the winter season",
       },
     ],
     images: [
@@ -225,14 +225,14 @@ export const productDetails: Record<string, ProductDetailData> = {
       "Noise Level": "Pending",
       "App Control": "Yes",
       Power: "Pending",
-      "Max. Climbing Ability": "80% (38.6°)",
+      "Max Climbing Ability": "80% (38.6°)",
       Runtime: "Pending",
     },
   },
   p5: {
     id: "p5",
     name: "Chore Blower",
-    tagline: "Autonomous snow removal for sidewalks, walkways, and commercial properties.",
+    tagline: "Autonomous snow removal for sidewalks, walkways, and commercial properties",
     category: "Snow Removal",
     price: 2499,
     originalPrice: 2699,
@@ -240,22 +240,22 @@ export const productDetails: Record<string, ProductDetailData> = {
     rating: 4.9,
     reviewsCount: 19,
     description:
-      "Keep pathways safe and accessible all winter with the Chore Snow Blower. Built for sidewalks, pedestrian walkways, parking lots, and commercial properties, it delivers reliable autonomous snow removal. Intelligent navigation ensures efficient coverage with minimal supervision. Advanced obstacle detection enhances safe operation in busy environments. Powerful performance clears snow quickly and consistently. Designed to reduce labor costs while maximizing productivity. Operate confidently in demanding winter conditions with dependable, professional results.",
+      "Keep pathways safe and accessible all winter with the Chore Snow Blower Built for sidewalks, pedestrian walkways, parking lots, and commercial properties, it delivers reliable autonomous snow removal Intelligent navigation ensures efficient coverage with minimal supervision Advanced obstacle detection enhances safe operation in busy environments Powerful performance clears snow quickly and consistently Designed to reduce labor costs while maximizing productivity Operate confidently in demanding winter conditions with dependable, professional results",
     features: [
       {
         title: "Intelligent Navigation",
         description:
-          "Ensures efficient coverage across walkways and parking lots with minimal supervision.",
+          "Ensures efficient coverage across walkways and parking lots with minimal supervision",
       },
       {
         title: "Advanced Obstacle Detection",
         description:
-          "Enhances safe operation in busy environments with pedestrians, vehicles, and fixed obstacles.",
+          "Enhances safe operation in busy environments with pedestrians, vehicles, and fixed obstacles",
       },
       {
         title: "Powerful Snow Removal",
         description:
-          "Clears snow quickly and consistently for dependable, professional results in demanding winter conditions.",
+          "Clears snow quickly and consistently for dependable, professional results in demanding winter conditions",
       },
     ],
     images: [
@@ -290,36 +290,36 @@ export const productDetails: Record<string, ProductDetailData> = {
       "Noise Level": "Pending",
       "App Control": "Yes",
       Power: "Pending",
-      "Max. Climbing Ability": "80% (38.6°)",
+      "Max Climbing Ability": "80% (38.6°)",
       Runtime: "Pending",
     },
   },
   p6: {
     id: "p6",
     name: "Chore Collector",
-    tagline: "Autonomous leaf collection for parks, campuses, and commercial properties.",
+    tagline: "Autonomous leaf collection for parks, campuses, and commercial properties",
     category: "Lawn Care",
     price: 1899,
     monthlyPayment: 158.25,
     rating: 4.6,
     reviewsCount: 9,
     description:
-      "Transform seasonal cleanup into effortless landscape maintenance with the Chore Leaf Collector. Engineered for parks, campuses, residential communities, and commercial properties, it autonomously collects and stores fallen leaves with precision. Intelligent navigation ensures efficient coverage while minimizing missed areas. Its reliable obstacle avoidance enables safe operation around trees, pathways, and landscape features. Reduce manual labor, improve operational efficiency, and keep outdoor spaces clean year-round. Designed for consistent, dependable performance in large-scale environments. Maintain a neat, professional landscape with less effort and greater productivity.",
+      "Transform seasonal cleanup into effortless landscape maintenance with the Chore Leaf Collector Engineered for parks, campuses, residential communities, and commercial properties, it autonomously collects and stores fallen leaves with precision Intelligent navigation ensures efficient coverage while minimizing missed areas Its reliable obstacle avoidance enables safe operation around trees, pathways, and landscape features Reduce manual labor, improve operational efficiency, and keep outdoor spaces clean year-round Designed for consistent, dependable performance in large-scale environments Maintain a neat, professional landscape with less effort and greater productivity",
     features: [
       {
         title: "Intelligent Navigation",
         description:
-          "Ensures efficient coverage across large outdoor spaces while minimizing missed areas and redundant passes.",
+          "Ensures efficient coverage across large outdoor spaces while minimizing missed areas and redundant passes",
       },
       {
         title: "Reliable Obstacle Avoidance",
         description:
-          "Enables safe operation around trees, pathways, and landscape features without interrupting daily maintenance.",
+          "Enables safe operation around trees, pathways, and landscape features without interrupting daily maintenance",
       },
       {
         title: "Autonomous Leaf Collection",
         description:
-          "Collects and stores fallen leaves with precision for consistent, dependable performance in large-scale environments.",
+          "Collects and stores fallen leaves with precision for consistent, dependable performance in large-scale environments",
       },
     ],
     images: [...COLLECTOR_GALLERY_IMAGES],
@@ -345,36 +345,36 @@ export const productDetails: Record<string, ProductDetailData> = {
       "Noise Level": "55 dB",
       "App Control": "Yes",
       Power: "1kW",
-      "Max. Climbing Ability": "80% (38.6°)",
+      "Max Climbing Ability": "80% (38.6°)",
       Runtime: "Pending",
     },
   },
   p9: {
     id: "p9",
     name: "Chore Irrigator",
-    tagline: "Precise, uniform irrigation for lawns, parks, and commercial landscapes.",
+    tagline: "Precise, uniform irrigation for lawns, parks, and commercial landscapes",
     category: "Lawn Care",
     price: 2199,
     monthlyPayment: 183.25,
     rating: 4.8,
     reviewsCount: 11,
     description:
-      "Deliver water exactly where it's needed with the Chore Irrigation System. Engineered for lawns, parks, campuses, sports fields, and commercial landscapes, it provides precise, uniform irrigation with minimal water waste. Intelligent navigation ensures efficient coverage across every section of the landscape. Its advanced spray control delivers consistent watering for healthier, greener vegetation. Reduce water consumption while improving irrigation efficiency and plant health. Designed for reliable autonomous operation with minimal human intervention. Maintain vibrant, healthy landscapes with smart, sustainable irrigation technology.",
+      "Deliver water exactly where it's needed with the Chore Irrigation System Engineered for lawns, parks, campuses, sports fields, and commercial landscapes, it provides precise, uniform irrigation with minimal water waste Intelligent navigation ensures efficient coverage across every section of the landscape Its advanced spray control delivers consistent watering for healthier, greener vegetation Reduce water consumption while improving irrigation efficiency and plant health Designed for reliable autonomous operation with minimal human intervention Maintain vibrant, healthy landscapes with smart, sustainable irrigation technology",
     features: [
       {
         title: "Intelligent Navigation",
         description:
-          "Ensures efficient coverage across every section of the landscape with minimal missed areas.",
+          "Ensures efficient coverage across every section of the landscape with minimal missed areas",
       },
       {
         title: "Advanced Spray Control",
         description:
-          "Delivers consistent watering for healthier, greener vegetation with minimal water waste.",
+          "Delivers consistent watering for healthier, greener vegetation with minimal water waste",
       },
       {
         title: "Autonomous Irrigation",
         description:
-          "Provides precise, uniform irrigation with reliable performance and minimal human intervention.",
+          "Provides precise, uniform irrigation with reliable performance and minimal human intervention",
       },
     ],
     images: [
@@ -408,7 +408,7 @@ export const productDetails: Record<string, ProductDetailData> = {
       "Noise Level": "60 dB",
       "App Control": "Yes",
       Power: "1.5kW",
-      "Max. Climbing Ability": "80% (38.6°)",
+      "Max Climbing Ability": "80% (38.6°)",
       Runtime: "Pending",
     },
   },

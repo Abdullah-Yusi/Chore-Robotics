@@ -12,6 +12,7 @@ export default function VideoHero() {
   const slide = landingHeroSlides[active];
   const isPrimarySlide = slide.id === "one-robot-every-chore";
   const isPrimaryMultiLine = isPrimarySlide && slide.headline.lines.length > 1;
+  const isLeftHeadline = slide.headline.position === "left";
 
   const goPrev = useCallback(() => {
     setActive((i) => (i === 0 ? landingHeroSlides.length - 1 : i - 1));
@@ -72,8 +73,8 @@ export default function VideoHero() {
               ? "text-center text-[clamp(0.85rem,3.2vw,2.75rem)] sm:text-[clamp(1.2rem,3.4vw,3rem)]"
               : isPrimarySlide
                 ? "whitespace-nowrap text-[clamp(0.85rem,3.6vw,3.25rem)] sm:text-[clamp(1.35rem,3.8vw,3.5rem)]"
-              : slide.headline.position === "left"
-                ? "max-w-[min(100%,13rem)] text-[clamp(1.35rem,5.5vw,3.5rem)] sm:max-w-[min(42vw,20rem)] sm:text-[clamp(1.85rem,4.6vw,4rem)] lg:max-w-[min(38vw,22rem)] lg:text-[clamp(2rem,4vw,4.25rem)]"
+              : isLeftHeadline
+                ? "max-w-[min(92vw,28rem)] text-[clamp(0.95rem,3.8vw,3.25rem)] sm:max-w-[min(58vw,36rem)] sm:text-[clamp(1.5rem,3.5vw,3.75rem)] lg:max-w-[min(52vw,40rem)] lg:text-[clamp(1.75rem,3.2vw,4rem)]"
                 : "text-[clamp(1.4rem,6.5vw,4.5rem)] sm:text-[clamp(2rem,5.5vw,4.5rem)]"
           } ${
             slide.headline.position === "left" ? "text-left" : "text-center"
@@ -84,6 +85,8 @@ export default function VideoHero() {
               key={line.text}
               className={`${
                 isPrimarySlide && !isPrimaryMultiLine ? "inline" : "block"
+              } ${
+                isLeftHeadline ? "whitespace-nowrap" : ""
               } text-white`}
             >
               {line.text}

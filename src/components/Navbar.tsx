@@ -121,15 +121,12 @@ export default function Navbar() {
             className="relative z-[60] flex shrink-0 items-center pointer-events-auto"
           >
             <Image
-              src={
-                useDarkNav
-                  ? "/svgs/final monogram.svg"
-                  : "/svgs/final monogram black.svg"
-              }
-              alt="CHORE"
-              width={120}
-              height={120}
-              className="h-14 w-auto object-contain sm:h-[72px] lg:h-[80px]"
+              src="/1.svg"
+              alt="Chore Robotics"
+              width={1500}
+              height={1500}
+              unoptimized
+              className="h-auto w-[128px] object-contain object-left sm:w-[148px] lg:w-[168px]"
               priority
             />
           </Link>

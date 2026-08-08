@@ -33,7 +33,7 @@ const seriesCards = [
   {
     eyebrow: "Multi-Seasonal",
     title: "ChoreCore Series",
-    description: "The heavy-duty modular yard robot for larger properties.",
+    description: "The heavy-duty modular yard robot for larger properties",
     cta: "Shop Now",
     image:
       "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=85",
@@ -41,7 +41,7 @@ const seriesCards = [
   {
     eyebrow: "Available for Reservation",
     title: "ChoreBot Series",
-    description: "The essential modular yard robot for every home.",
+    description: "The essential modular yard robot for every home",
     cta: "Pre-Order Now",
     image:
       "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=85",

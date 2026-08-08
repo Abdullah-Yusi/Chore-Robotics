@@ -42,18 +42,18 @@ export default function CareersForm() {
   const validate = () => {
     const nextErrors: Partial<Record<keyof CareersFormData, string>> = {};
 
-    if (!form.fullName.trim()) nextErrors.fullName = "Full name is required.";
-    if (!isValidEmail(form.email)) nextErrors.email = "Enter a valid email address.";
+    if (!form.fullName.trim()) nextErrors.fullName = "Full name is required";
+    if (!isValidEmail(form.email)) nextErrors.email = "Enter a valid email address";
     if (form.phone && !isValidUsPhone(form.phone)) {
-      nextErrors.phone = "Enter a valid 10-digit US phone number.";
+      nextErrors.phone = "Enter a valid 10-digit US phone number";
     }
     if (form.linkedIn.trim() && !/^https?:\/\/.+/i.test(form.linkedIn.trim())) {
       nextErrors.linkedIn = "Enter a valid URL (include https://).";
     }
     if (!form.resumeFile) {
-      nextErrors.resumeFile = "Please attach your resume.";
+      nextErrors.resumeFile = "Please attach your resume";
     } else if (!isValidResumeFile(form.resumeFile)) {
-      nextErrors.resumeFile = "Upload a PDF, DOC, or DOCX file under 10 MB.";
+      nextErrors.resumeFile = "Upload a PDF, DOC, or DOCX file under 10 MB";
     }
 
     setErrors(nextErrors);
@@ -79,7 +79,7 @@ export default function CareersForm() {
           isVisible ? "reveal is-visible" : "reveal"
         }`}
       >
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-orange/30 bg-orange/10">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-border bg-foreground/5">
           <svg
             className="h-8 w-8 text-orange"
             viewBox="0 0 24 24"
@@ -146,7 +146,7 @@ export default function CareersForm() {
                 id="careers-email"
                 type="email"
                 autoComplete="email"
-                placeholder="jane.doe@email.com"
+                placeholder="janedoe@emailcom"
                 value={form.email}
                 onChange={(event) => updateField("email", event.target.value)}
                 className={inputClassName}
@@ -207,7 +207,7 @@ export default function CareersForm() {
             <textarea
               id="careers-message"
               rows={5}
-              placeholder="Tell us about your background, interests, and why you'd like to join Chore Robotics."
+              placeholder="Tell us about your background, interests, and why you'd like to join Chore Robotics"
               value={form.message}
               onChange={(event) => updateField("message", event.target.value)}
               className={`${inputClassName} min-h-[140px] resize-y`}
@@ -237,7 +237,7 @@ export default function CareersForm() {
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="flex w-full flex-col items-center justify-center rounded-xl border border-dashed border-border bg-background/50 px-6 py-10 text-center transition-colors hover:border-orange/40 hover:bg-orange/5"
+              className="flex w-full flex-col items-center justify-center rounded-xl border border-dashed border-border bg-background/50 px-6 py-10 text-center transition-colors hover:border-border hover:bg-foreground/[0.03]"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-foreground/5 text-subtle">
                 <svg

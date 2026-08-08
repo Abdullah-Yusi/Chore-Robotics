@@ -37,12 +37,12 @@ export default function InvestorRequestForm() {
   const validate = () => {
     const nextErrors: Partial<Record<keyof InvestorFormData, string>> = {};
 
-    if (!form.fullName.trim()) nextErrors.fullName = "Full name is required.";
-    if (!isValidEmail(form.email)) nextErrors.email = "Enter a valid email address.";
-    if (!form.company.trim()) nextErrors.company = "Company or organization is required.";
-    if (!form.investorType) nextErrors.investorType = "Please select an investor type.";
+    if (!form.fullName.trim()) nextErrors.fullName = "Full name is required";
+    if (!isValidEmail(form.email)) nextErrors.email = "Enter a valid email address";
+    if (!form.company.trim()) nextErrors.company = "Company or organization is required";
+    if (!form.investorType) nextErrors.investorType = "Please select an investor type";
     if (form.phone && !isValidUsPhone(form.phone)) {
-      nextErrors.phone = "Enter a valid 10-digit US phone number.";
+      nextErrors.phone = "Enter a valid 10-digit US phone number";
     }
 
     setErrors(nextErrors);
@@ -69,7 +69,7 @@ export default function InvestorRequestForm() {
           isVisible ? "reveal is-visible" : "reveal"
         }`}
       >
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-orange/30 bg-orange/10">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-border bg-foreground/5">
           <svg
             className="h-8 w-8 text-orange"
             viewBox="0 0 24 24"
@@ -221,7 +221,7 @@ export default function InvestorRequestForm() {
             rows={4}
             value={form.message}
             onChange={(event) => updateField("message", event.target.value)}
-            placeholder="Tell us about your interest in Chore Robotics..."
+            placeholder="Tell us about your interest in Chore Robotics"
             className="form-input mt-2 min-h-[120px] resize-y"
           />
         </div>
@@ -231,7 +231,7 @@ export default function InvestorRequestForm() {
           disabled={isSubmitting}
           className="btn-reserve w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
         >
-          {isSubmitting ? "Submitting..." : requestForm.submitLabel}
+          {isSubmitting ? "Submitting" : requestForm.submitLabel}
         </button>
       </form>
     </div>

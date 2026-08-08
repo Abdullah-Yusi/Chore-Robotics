@@ -40,7 +40,7 @@ export default function InvestorPressReleases() {
           {pressReleases.items.map((release, index) => (
             <article
               key={release.id}
-              className="group flex flex-col rounded-2xl border border-border bg-surface-elevated p-6 transition-all duration-300 hover:border-orange/35 hover:shadow-[0_24px_60px_rgba(255,132,0,0.06)] sm:p-7"
+              className="group flex flex-col rounded-2xl border border-border bg-surface-elevated p-6 transition-all duration-300 hover:border-border sm:p-7"
               style={{ transitionDelay: `${index * 60}ms` }}
             >
               <time

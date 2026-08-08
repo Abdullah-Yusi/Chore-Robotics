@@ -35,7 +35,7 @@ export default function ProductShowcase() {
               key={product.id}
               href={product.href}
               id={product.id}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface-elevated transition-all duration-300 hover:border-orange/35"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface-elevated transition-all duration-300 hover:border-border"
               style={{ transitionDelay: `${index * 40}ms` }}
             >
               <div className="relative aspect-[4/3] bg-gradient-to-br from-[var(--gallery-from)] via-[var(--gallery-via)] to-[var(--gallery-to)]">

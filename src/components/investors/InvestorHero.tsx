@@ -13,11 +13,6 @@ export default function InvestorHero() {
         isVisible ? "reveal is-visible" : "reveal"
       }`}
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,132,0,0.12),transparent)]"
-      />
-
       <div className="relative mx-auto max-w-[1440px] text-center">
         <p className="font-body text-xs font-bold uppercase tracking-[0.28em] text-[#ff8400] sm:text-sm">
           {investorsPage.eyebrow}

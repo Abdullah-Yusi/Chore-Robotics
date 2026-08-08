@@ -24,8 +24,7 @@ export default function LandingTechnologyPreviewSection() {
             {landingTechnologyPreview.title}
           </h2>
           <h2 className="mt-1 font-heading text-[clamp(1.25rem,3.5vw,2.5rem)] font-semibold leading-tight text-foreground sm:text-[clamp(1.75rem,3.5vw,2.5rem)]">
-            <span className="italic">Chore&apos;s</span>
-            {landingTechnologyPreview.titleLine2.replace(/^Chore's/, "")}
+            {landingTechnologyPreview.titleLine2}
           </h2>
         </div>
 

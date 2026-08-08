@@ -102,7 +102,7 @@ export default function InvestorEvents() {
                   <span
                     className={`inline-flex w-fit rounded-full px-3 py-1 font-body text-[10px] font-bold uppercase tracking-[0.14em] ${
                       isUpcoming
-                        ? "border border-orange/35 bg-orange/10 text-orange"
+                        ? "border border-border bg-foreground/5 text-foreground"
                         : "border border-border bg-foreground/5 text-subtle"
                     }`}
                   >

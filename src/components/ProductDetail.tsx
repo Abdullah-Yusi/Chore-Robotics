@@ -49,7 +49,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                   onClick={() => setActiveImageIdx(idx)}
                   className={`relative aspect-square w-full overflow-hidden rounded-xl border-2 bg-gradient-to-br from-[var(--gallery-from)] via-[var(--gallery-via)] to-[var(--gallery-to)] transition-all duration-300 cursor-pointer ${
                     activeImageIdx === idx
-                      ? "border-orange shadow-[0_0_0_3px_rgba(255,132,0,0.18)] scale-[1.02]"
+                      ? "border-foreground scale-[1.02]"
                       : "border-border hover:border-border-strong"
                   }`}
                 >
@@ -122,7 +122,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                   onClick={() => setActiveImageIdx(idx)}
                   className={`relative aspect-square w-[72px] shrink-0 overflow-hidden rounded-xl border-2 bg-gradient-to-br from-[var(--gallery-from)] via-[var(--gallery-via)] to-[var(--gallery-to)] transition-all duration-300 cursor-pointer ${
                     activeImageIdx === idx
-                      ? "border-orange shadow-[0_0_0_3px_rgba(255,132,0,0.18)] scale-[1.03]"
+                      ? "border-foreground scale-[1.03]"
                       : "border-border"
                   }`}
                 >

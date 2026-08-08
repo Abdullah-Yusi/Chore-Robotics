@@ -11,7 +11,7 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
   title: "Technology — CHORE",
   description:
-    "Engineering built for the long haul — dynamic obstacle navigation and fleet command from a single app.",
+    "Engineering built for the long haul — dynamic obstacle navigation and fleet command from a single app",
 };
 
 export default function TechnologyPage() {

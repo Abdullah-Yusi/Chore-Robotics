@@ -124,14 +124,25 @@ export default function ProductTabShowcaseSection() {
           >
             <div key={current.id} className="showcase-text-enter group">
               <h2
-                className="font-heading text-[clamp(1.05rem,5vw,2.25rem)] font-bold uppercase leading-[0.95] tracking-[0.02em] text-white sm:whitespace-nowrap sm:text-[clamp(0.95rem,2.8vw,2.25rem)]"
+                className="font-heading text-[clamp(1.26rem,6vw,2.7rem)] font-bold leading-[0.95] tracking-[0.01em] text-white sm:whitespace-nowrap sm:text-[clamp(1.14rem,3.36vw,2.7rem)]"
                 aria-label={`${current.titleBrand} ${current.titleName}`}
               >
                 {current.titleBrand}&nbsp;{current.titleName}
               </h2>
-              <p className="mt-1.5 font-heading text-[clamp(0.65rem,2.8vw,0.8rem)] font-semibold uppercase leading-snug tracking-[0.06em] text-white sm:mt-2 sm:max-w-[260px] sm:text-[clamp(0.6rem,1.2vw,0.8rem)]">
-                {current.subtitle}
-              </p>
+              {current.subtitleLine2 ? (
+                <div className="mt-2 space-y-1 sm:mt-3">
+                  <p className="whitespace-nowrap font-heading text-[clamp(0.96rem,3.84vw,1.2rem)] font-semibold leading-snug tracking-[0.02em] text-white sm:text-[clamp(1.14rem,1.92vw,1.32rem)]">
+                    {current.subtitle}
+                  </p>
+                  <p className="font-heading text-[clamp(0.96rem,3.84vw,1.2rem)] font-semibold leading-snug tracking-[0.02em] text-white sm:text-[clamp(1.14rem,1.92vw,1.32rem)]">
+                    {current.subtitleLine2}
+                  </p>
+                </div>
+              ) : (
+                <p className="mt-2 font-heading text-[clamp(0.96rem,3.84vw,1.2rem)] font-semibold leading-snug tracking-[0.02em] text-white sm:mt-3 sm:text-[clamp(1.14rem,1.92vw,1.32rem)]">
+                  {current.subtitle}
+                </p>
+              )}
             </div>
           </Link>
 

@@ -43,21 +43,6 @@ function hasSectionVideo(section: AboutSection): section is AboutSectionWithVide
 }
 
 function renderSectionContent(section: AboutSection) {
-  if ("bullets" in section) {
-    return (
-      <SectionText section={section}>
-        <ul className="space-y-3">
-          {section.bullets.map((bullet) => (
-            <li key={bullet} className="flex gap-3">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange" />
-              <span>{bullet}</span>
-            </li>
-          ))}
-        </ul>
-      </SectionText>
-    );
-  }
-
   if ("paragraphs" in section) {
     return (
       <SectionText section={section}>
@@ -79,7 +64,7 @@ export default function AboutContent() {
       <div className="mx-auto max-w-[900px]">
         <div className="relative">
           <div
-            className="absolute left-[11px] top-2 bottom-2 w-px bg-gradient-to-b from-orange/40 via-border to-transparent sm:left-[19px]"
+            className="absolute left-[11px] top-2 bottom-2 w-px bg-gradient-to-b from-border via-border to-transparent sm:left-[19px]"
             aria-hidden
           />
 
@@ -87,7 +72,7 @@ export default function AboutContent() {
             {aboutPage.sections.map((section) => (
               <div key={section.id} className="relative pl-10 sm:pl-16">
                 <div
-                  className="absolute left-0 top-1 flex h-8 w-8 items-center justify-center rounded-full border border-orange/40 bg-background sm:h-10 sm:w-10"
+                  className="absolute left-0 top-1 flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background sm:h-10 sm:w-10"
                   aria-hidden
                 >
                   <span className="font-body text-xs font-bold text-orange sm:text-[13px]">

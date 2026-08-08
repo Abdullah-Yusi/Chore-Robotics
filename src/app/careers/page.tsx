@@ -7,7 +7,7 @@ import { careersPage } from "@/data/careers";
 export const metadata: Metadata = {
   title: "Careers — CHORE",
   description:
-    "Join Chore Robotics. Share your details and resume — we are building the future of autonomous indoor and outdoor maintenance.",
+    "Join Chore Robotics Share your details and resume — we are building the future of autonomous indoor and outdoor maintenance",
 };
 
 export default function CareersPage() {
@@ -16,11 +16,6 @@ export default function CareersPage() {
       <Navbar />
       <main className="bg-background pt-[88px]">
         <section className="relative overflow-hidden px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-24">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,132,0,0.12),transparent)]"
-          />
-
           <div className="relative mx-auto max-w-[1440px]">
             <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16 xl:gap-20">
               <div className="max-w-xl lg:sticky lg:top-32 lg:self-start">

@@ -21,9 +21,9 @@ export type LandingFeaturedProduct = {
 const featuredProductIds = ["p10", "p6", "p5"] as const;
 
 const featuredDescriptions: Record<(typeof featuredProductIds)[number], string> = {
-  p10: "Flawless lawn care without the manual labor. This intelligent mower smoothly navigates your property, delivering a pristine, even cut while instantly adapting to your unique outdoor terrain.",
-  p6: "Keep your grounds perfectly clear all year. This high-capacity sweeper maps your property to autonomously collect heavy leaves and debris, leaving nothing but an immaculate landscape behind.",
-  p5: "Conquer winter weather before it slows you down. This powerful attachment effortlessly clears heavy snow from your walkways, safely navigating freezing temperatures and unpredictable frozen ground.",
+  p10: "Flawless lawn care without the manual labor This intelligent mower smoothly navigates your property, delivering a pristine, even cut while instantly adapting to your unique outdoor terrain",
+  p6: "Keep your grounds perfectly clear all year This high-capacity sweeper maps your property to autonomously collect heavy leaves and debris, leaving nothing but an immaculate landscape behind",
+  p5: "Conquer winter weather before it slows you down This powerful attachment effortlessly clears heavy snow from your walkways, safely navigating freezing temperatures and unpredictable frozen ground",
 };
 
 const featuredImages: Partial<Record<(typeof featuredProductIds)[number], string>> = {

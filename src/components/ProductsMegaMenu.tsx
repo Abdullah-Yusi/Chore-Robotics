@@ -105,7 +105,7 @@ export default function ProductsMegaMenu({
                 <Link
                   key={product.id}
                   href={`/product/${PRODUCT_SLUGS[product.id] ?? product.id}`}
-                  className={`group flex flex-col border ${border} ${cardBg} transition-all duration-300 hover:border-orange/35 hover:shadow-[0_12px_32px_rgba(255,132,0,0.08)]`}
+                  className={`group flex flex-col border ${border} ${cardBg} transition-all duration-300 hover:border-border`}
                 >
                   <div className="relative aspect-[4/3] w-full bg-white">
                     <Image

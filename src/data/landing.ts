@@ -18,14 +18,14 @@ export const landingHeroSlides = [
   {
     id: "one-robot-every-chore",
     image: slideshowNew("hero-one-robot-every-chore-all-year.png"),
-    alt: "100% AMERICAN-MADE ROBOTICS — ONE ROBOT. EVERY CHORE. ALL YEAR",
+    alt: "100% AMERICAN-MADE ROBOTICS — ONE ROBOT EVERY CHORE ALL YEAR",
     imageClassName:
       "object-cover object-[50%_38%] sm:object-[50%_center] lg:object-center",
     headline: {
       position: "center",
       lines: [
         { text: "100% AMERICAN-MADE ROBOTICS" },
-        { text: "ONE ROBOT. EVERY CHORE. ALL YEAR" },
+        { text: "ONE ROBOT EVERY CHORE ALL YEAR" },
       ],
     },
   },
@@ -49,8 +49,8 @@ export const landingHeroSlides = [
     headline: {
       position: "center",
       lines: [
-        { text: "CLEAR THE SNOW.", accent: true },
-        { text: "OWN THE WINTER." },
+        { text: "CLEAR THE SNOW", accent: true },
+        { text: "OWN THE WINTER" },
       ],
     },
   },
@@ -63,8 +63,7 @@ export const landingHeroSlides = [
     headline: {
       position: "left",
       lines: [
-        { text: "COMMERCIAL" },
-        { text: "FLOOR CARE" },
+        { text: "COMMERCIAL FLOOR CARE" },
         { text: "ON AUTOPILOT" },
       ],
     },
@@ -81,7 +80,7 @@ export const reserveSection = {
   eyebrow: "Early access",
   title: "Reserve your CHORE",
   description:
-    "Hold your spot with a refundable deposit. We’ll reach out when it’s time to choose your series and modules.",
+    "Hold your spot with a refundable deposit We’ll reach out when it’s time to choose your series and modules",
   cta: { label: "Reservation", href: "/reservation" },
 };
 
@@ -91,7 +90,7 @@ export const productShowcase = [
     title: "Chore Mower",
     tagline: "Lawn Care",
     description:
-      "Autonomous lawn mowing with precise coverage and intelligent navigation.",
+      "Autonomous lawn mowing with precise coverage and intelligent navigation",
     image: CHOREMOWER_NEW_IMAGES[0],
     imagePosition: "object-center",
     cta: "Explore Chore Mower",
@@ -102,7 +101,7 @@ export const productShowcase = [
     title: "Chore Mopper",
     tagline: "Floor Care",
     description:
-      "Autonomous floor cleaning for warehouses and commercial facilities.",
+      "Autonomous floor cleaning for warehouses and commercial facilities",
     image: "/Lawnmower%20Images/Lawn%20Mower%20-%20White%20Background%20-%20Isometric_View_01.jpg.jpeg",
     imagePosition: "object-center",
     cta: "Explore Chore Mopper",
@@ -118,10 +117,10 @@ export const productTabShowcase = [
     alt: "Chore Mower autonomous lawn mower for commercial and residential properties",
     imageClassName: "object-cover object-center",
     titleBrand: "Chore",
-    titleName: "Mower",
-    subtitle: "PERFECT THE CUT",
+    titleName: "Mopper",
+    subtitle: "Perfect the cut",
     subtitleAccent: "PERFECT",
-    href: "/product/choremower",
+    href: "/product/choremopper",
   },
   {
     id: "heavy-snow",
@@ -156,15 +155,16 @@ export const productTabShowcase = [
   titleBrand: string;
   titleName: string;
   subtitle: string;
+  subtitleLine2?: string;
   subtitleAccent: string;
   href: string;
 }>;
 
 export const technologySection = {
   eyebrow: "Our Technologies",
-  headline: "GPS Agnostic. Zero Dead Zones.",
+  headline: "GPS Agnostic Zero Dead Zones",
   description:
-    "Say goodbye to satellite dropout and GPS signal loss. Our patented Ground Penetrating Radar (GPR) technology maps the terrain in real-time for unbreakable, underground autonomy.",
+    "Say goodbye to satellite dropout and GPS signal loss Our patented Ground Penetrating Radar (GPR) technology maps the terrain in real-time for unbreakable, underground autonomy",
   image: "/gpr-new.jpeg",
   imageAlt:
     "CHORE robot using Ground Penetrating Radar to map subsurface terrain on a snowy forest road",
@@ -173,9 +173,9 @@ export const technologySection = {
 
 export const technologyPageHero = {
   eyebrow: "The Platform",
-  headline: "MAPPING BEYOND THE SURFACE.",
+  headline: "MAPPING BEYOND THE SURFACE",
   description:
-    "True autonomy requires more than just surface-level vision. Our Ground Penetrating Radar (GPR) continuously scans the subterranean landscape, reading unique soil layers to create a reliable, three-dimensional navigational map.",
+    "True autonomy requires more than just surface-level vision Our Ground Penetrating Radar (GPR) continuously scans the subterranean landscape, reading unique soil layers to create a reliable, three-dimensional navigational map",
   video: "GPR Video Updated.mp4",
 };
 
@@ -183,7 +183,7 @@ export const spatialAwarenessSection = {
   eyebrow: "Sensor Architecture",
   headline: "360° SPATIAL AWARENESS",
   description:
-    "Overlapping sensor fields continuously monitor every direction, ensuring reliable collision avoidance and safe navigation in complex outdoor environments.",
+    "Overlapping sensor fields continuously monitor every direction, ensuring reliable collision avoidance and safe navigation in complex outdoor environments",
   image: `/${encodeURIComponent("Sensor Stack Image New latest.png")}`,
   imageAlt:
     "CHORE robot with overlapping sensor fields scanning its outdoor environment",
@@ -191,17 +191,17 @@ export const spatialAwarenessSection = {
 
 export const obstacleNavigationSection = {
   eyebrow: "Dynamic Navigation",
-  headline: "UNMATCHED AGILITY. COLLISION-FREE PERFORMANCE.",
+  headline: "UNMATCHED AGILITY COLLISION-FREE PERFORMANCE",
   description:
-    "Seamlessly navigating the unexpected, real-time sensor mapping and instant path correction keep every mission moving forward.",
+    "Seamlessly navigating the unexpected, real-time sensor mapping and instant path correction keep every mission moving forward",
   video: "ChoreRobot_Dynamic_Obstacles_Navigation (1).mp4",
 };
 
 export const patentedSecureLockSection = {
   eyebrow: "Modular Design",
-  headline: "PATENTED SECURE LOCK.",
+  headline: "PATENTED SECURE LOCK",
   description:
-    "Our proprietary, in-house design allows you to swap modules instantly. No tools required.",
+    "Our proprietary, in-house design allows you to swap modules instantly No tools required",
   video: "Video Project 7.mp4",
 };
 
@@ -209,14 +209,14 @@ export const dynamicStabilitySection = {
   eyebrow: "Suspension System",
   headline: "PATENTED SUSPENSION ARCHITECTURE",
   description:
-    "A custom-engineered shock-absorbing architecture built around a heavy-duty brushless DC motor. This proprietary assembly maximizes ground contact and torque delivery, ensuring the platform powers through rough terrain without ever losing grip",
+    "A custom-engineered shock-absorbing architecture built around a heavy-duty brushless DC motor This proprietary assembly maximizes ground contact and torque delivery, ensuring the platform powers through rough terrain without ever losing grip",
   video: "Main Robot Exploded View.43.mp4",
 };
 
 export const fleetManagementSection = {
   eyebrow: "Connected Operations",
-  headline: "Your Fleet. One App.",
-  description: "Monitor, update, and deploy — from anywhere.",
+  headline: "Your Fleet One App",
+  description: "Monitor, update, and deploy — from anywhere",
   image: "/fleet-pic.png",
   imageAlt:
     "Hands holding a smartphone displaying the CHORE Fleet Management App with live mower status",
@@ -228,7 +228,7 @@ export const fleetManagementSection = {
 
 export const landingTechnologyPreview = {
   eyebrow: "Our Technologies",
-  title: "Beyond GPS. The End of Dead Zones.",
+  title: "Beyond GPS The End of Dead Zones",
   titleLine2: "Chore's Innovative Solution",
   cta: {
     label: "Explore Our Technologies",
@@ -265,7 +265,7 @@ export const storiesSection = {
 };
 
 export const newsletterSection = {
-  title: "Stay up to speed on the latest at CHORE.",
+  title: "Stay up to speed on the latest at CHORE",
   placeholder: "Email",
   buttonLabel: "Get updates",
 };
@@ -303,6 +303,5 @@ export const footerLinks = {
 export const navLinks = [
   { label: "Technology", href: "/technology" },
   { label: "About", href: "/about" },
-  { label: "Careers", href: "/careers" },
   { label: "Investors", href: "/investors" },
 ];

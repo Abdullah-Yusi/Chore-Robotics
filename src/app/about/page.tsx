@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
   title: "About — CHORE",
   description:
-    "Founded in 2025, Chore Robotics is engineering intelligent modular robots to automate indoor and outdoor property maintenance at scale.",
+    "Founded in 2025, Chore Robotics is engineering intelligent modular robots to automate indoor and outdoor property maintenance at scale",
 };
 
 export default function AboutPage() {

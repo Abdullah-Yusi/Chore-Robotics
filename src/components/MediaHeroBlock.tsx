@@ -93,7 +93,6 @@ export default function MediaHeroBlock({
           </div>
         </div>
 
-        <div className="pointer-events-none absolute bottom-0 right-0 h-px w-2/3 bg-gradient-to-l from-[#ff8400]/60 to-transparent" />
       </div>
     </div>
   );

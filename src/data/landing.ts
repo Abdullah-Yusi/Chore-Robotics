@@ -1,7 +1,8 @@
 import { CHOREMOWER_NEW_IMAGES } from "./choremower-images";
-import { SNOW_BLOWER_FEATURED_IMAGE } from "./product-details";
 
 const slideshowNew = (filename: string) => `/slideshow-new/${filename}`;
+const productTabAsset = (filename: string) =>
+  `/product-tabs/${encodeURIComponent(filename)}`;
 
 export type HeroSlideHeadlineLine = {
   text: string;
@@ -17,15 +18,14 @@ export const landingHeroSlides = [
   {
     id: "one-robot-every-chore",
     image: slideshowNew("hero-one-robot-every-chore-all-year.png"),
-    alt: "ONE ROBOT. EVERY CHORE. ALL YEAR — CHORE modular robots for every season",
+    alt: "100% AMERICAN-MADE ROBOTICS — ONE ROBOT. EVERY CHORE. ALL YEAR",
     imageClassName:
       "object-cover object-[50%_38%] sm:object-[50%_center] lg:object-center",
     headline: {
       position: "center",
       lines: [
-        { text: "ONE ROBOT. " },
-        { text: "EVERY CHORE.", accent: true },
-        { text: " ALL YEAR" },
+        { text: "100% AMERICAN-MADE ROBOTICS" },
+        { text: "ONE ROBOT. EVERY CHORE. ALL YEAR" },
       ],
     },
   },
@@ -37,10 +37,7 @@ export const landingHeroSlides = [
       "object-cover object-[58%_55%] sm:object-[55%_center] lg:object-center",
     headline: {
       position: "top",
-      lines: [
-        { text: "BEST-IN-CLASS AMERICAN" },
-        { text: "AUTONOMOUS SOLUTIONS" },
-      ],
+      lines: [{ text: "AUTONOMOUS PRECISION IRRIGATION" }],
     },
   },
   {
@@ -62,12 +59,13 @@ export const landingHeroSlides = [
     image: slideshowNew("hero-forklift-module.png"),
     alt: "CHORE autonomous material-handling robot in a warehouse",
     imageClassName:
-      "object-cover object-[65%_58%] sm:object-[62%_center] lg:object-center",
+      "object-cover object-[75%_55%] sm:object-[82%_center] lg:object-[88%_center]",
     headline: {
       position: "left",
       lines: [
-        { text: "HEAVY LOADS.", accent: true },
-        { text: "ZERO LIFT." },
+        { text: "COMMERCIAL" },
+        { text: "FLOOR CARE" },
+        { text: "ON AUTOPILOT" },
       ],
     },
   },
@@ -112,47 +110,41 @@ export const productShowcase = [
   },
 ] as const;
 
-const chorecollectorAsset = (filename: string) =>
-  `/chorecollector/${encodeURIComponent(filename)}`;
-
 export const productTabShowcase = [
   {
-    id: "floor-care",
-    tabLabel: "FLOOR CARE",
-    image: CHOREMOWER_NEW_IMAGES[0],
+    id: "lawn-care",
+    tabLabel: "LAWN CARE",
+    image: productTabAsset("Lawn Mower.jpeg"),
     alt: "Chore Mower autonomous lawn mower for commercial and residential properties",
-    imageClassName:
-      "object-contain object-center p-3 sm:object-cover sm:object-[68%_center] sm:p-0",
+    imageClassName: "object-cover object-center",
     titleBrand: "Chore",
     titleName: "Mower",
-    subtitle: "LET CHORE HANDLE ALL THE HEAVY LIFTING",
-    subtitleAccent: "CHORE",
-    href: "/product/choremopper",
+    subtitle: "PERFECT THE CUT",
+    subtitleAccent: "PERFECT",
+    href: "/product/choremower",
   },
   {
     id: "heavy-snow",
     tabLabel: "HEAVY SNOW",
-    image: SNOW_BLOWER_FEATURED_IMAGE,
+    image: productTabAsset("Snow Blower.jpeg"),
     alt: "Chore Blower autonomous snow blower clearing walkways and parking lots",
-    imageClassName:
-      "object-contain object-center p-1 sm:object-cover sm:object-[58%_center] sm:p-0",
+    imageClassName: "object-cover object-center",
     titleBrand: "Chore",
     titleName: "Blower",
-    subtitle: "WINTER HAS BEEN HANDLED",
+    subtitle: "WINTER MADE EASY",
     subtitleAccent: "WINTER",
     href: "/product/choreblower",
   },
   {
     id: "leaf-care",
     tabLabel: "LEAF CARE",
-    image: chorecollectorAsset("Leaf Collector - Isometric View - White Background 01.jpg.jpeg"),
+    image: productTabAsset("Leaf Collector.jpeg"),
     alt: "Chore Collector autonomous leaf collector for parks and commercial properties",
-    imageClassName:
-      "object-contain object-center p-3 sm:object-cover sm:object-[68%_center] sm:p-0",
+    imageClassName: "object-cover object-center",
     titleBrand: "Chore",
     titleName: "Collector",
-    subtitle: "AUTUMN HAS BEEN HANDLED",
-    subtitleAccent: "AUTUMN",
+    subtitle: "CLEAR THE FALL",
+    subtitleAccent: "CLEAR",
     href: "/product/chorecollector",
   },
 ] as const satisfies ReadonlyArray<{
@@ -182,15 +174,17 @@ export const technologySection = {
 export const technologyPageHero = {
   eyebrow: "The Platform",
   headline: "MAPPING BEYOND THE SURFACE.",
+  description:
+    "True autonomy requires more than just surface-level vision. Our Ground Penetrating Radar (GPR) continuously scans the subterranean landscape, reading unique soil layers to create a reliable, three-dimensional navigational map.",
   video: "GPR Video Updated.mp4",
 };
 
 export const spatialAwarenessSection = {
   eyebrow: "Sensor Architecture",
-  headline: "360° SPATIAL AWARENESS.",
+  headline: "360° SPATIAL AWARENESS",
   description:
-    "Equipped with overlapping sensor fields, the platform continuously monitors its environment in every direction. This comprehensive architecture ensures reliable obstacle detection and safe navigation through complex outdoor spaces.",
-  image: "/Sensor Stack Image New.png",
+    "Overlapping sensor fields continuously monitor every direction, ensuring reliable collision avoidance and safe navigation in complex outdoor environments.",
+  image: `/${encodeURIComponent("Sensor Stack Image New latest.png")}`,
   imageAlt:
     "CHORE robot with overlapping sensor fields scanning its outdoor environment",
 };
@@ -213,9 +207,9 @@ export const patentedSecureLockSection = {
 
 export const dynamicStabilitySection = {
   eyebrow: "Suspension System",
-  headline: "DYNAMIC STABILITY.",
+  headline: "PATENTED SUSPENSION ARCHITECTURE",
   description:
-    "A custom-engineered suspension system that absorbs harsh impacts, keeping the autonomous core perfectly level for flawless sensor accuracy.",
+    "A custom-engineered shock-absorbing architecture built around a heavy-duty brushless DC motor. This proprietary assembly maximizes ground contact and torque delivery, ensuring the platform powers through rough terrain without ever losing grip",
   video: "Main Robot Exploded View.43.mp4",
 };
 
@@ -235,7 +229,7 @@ export const fleetManagementSection = {
 export const landingTechnologyPreview = {
   eyebrow: "Our Technologies",
   title: "Beyond GPS. The End of Dead Zones.",
-  titleLine2: "CHORE's Innovative Solution",
+  titleLine2: "Chore's Innovative Solution",
   cta: {
     label: "Explore Our Technologies",
     href: "/technology",
@@ -291,12 +285,7 @@ export const footerLinks = {
     { label: "About", href: "/about" },
     { label: "Technology", href: "/technology" },
     { label: "Careers", href: "/careers" },
-    { label: "Stories", href: "#stories" },
-  ],
-  support: [
-    { label: "Support", href: "#support" },
-    { label: "Contact", href: "#contact" },
-    { label: "Press", href: "#press" },
+    { label: "Investors", href: "/investors" },
   ],
   legal: [
     { label: "Terms of Use", href: "#terms" },
@@ -306,7 +295,7 @@ export const footerLinks = {
     { label: "LinkedIn", href: "https://www.linkedin.com/company/chore-robotics/?viewAsMember=true" },
     { label: "YouTube", href: "https://youtube.com/@chorerobotics?si=3qsphW9ZEHq5Y1Vr" },
     { label: "Instagram", href: "https://www.instagram.com/chorerobotics" },
-    { label: "TikTok", href: "https://tiktok.com" },
+    { label: "TikTok", href: "https://www.tiktok.com/@chorerobotics?_r=1&_t=ZT-98evE83l1kj" },
     { label: "X", href: "https://x.com/chorerobotics/status/2084009247994691725?s=20" },
   ],
 };
@@ -315,5 +304,5 @@ export const navLinks = [
   { label: "Technology", href: "/technology" },
   { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },
-  { label: "Investors", href: "#investors" },
+  { label: "Investors", href: "/investors" },
 ];

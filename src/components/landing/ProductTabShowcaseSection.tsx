@@ -82,10 +82,10 @@ export default function ProductTabShowcaseSection() {
 
           {/* Desktop: angled tab bar */}
           <div
-            className="absolute left-0 top-0 z-[30] hidden sm:block"
+            className="absolute left-0 top-0 z-[30] hidden overflow-hidden rounded-tl-2xl sm:block"
             style={{
               clipPath:
-                "polygon(0 0, calc(100% - 32px) 0, 100% 100%, 0 100%)",
+                "polygon(0 0, 100% 0, calc(100% - 42px) 100%, 0 100%)",
             }}
           >
             <div className="pointer-events-auto flex h-[42px] items-center gap-5 bg-[#4a4a4a]/90 px-5 backdrop-blur-sm">

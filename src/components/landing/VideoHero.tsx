@@ -11,6 +11,7 @@ export default function VideoHero() {
   const [active, setActive] = useState(0);
   const slide = landingHeroSlides[active];
   const isPrimarySlide = slide.id === "one-robot-every-chore";
+  const isPrimaryMultiLine = isPrimarySlide && slide.headline.lines.length > 1;
 
   const goPrev = useCallback(() => {
     setActive((i) => (i === 0 ? landingHeroSlides.length - 1 : i - 1));
@@ -60,16 +61,20 @@ export default function VideoHero() {
           slide.headline.position === "top"
             ? "items-start justify-center pt-[10%] sm:pt-[9%] lg:pt-[8%]"
             : slide.headline.position === "left"
-              ? "items-center justify-start pb-20 pt-12 sm:pb-0 sm:pt-0 sm:pl-8 lg:pl-20"
+              ? "items-start justify-start pb-20 pt-[8%] sm:pb-0 sm:pt-[10%] sm:pl-8 lg:pt-[11%] lg:pl-20"
               : "items-center justify-center pb-20 pt-12 sm:translate-y-[4%] sm:pb-0 sm:pt-0 lg:translate-y-[6%]"
         }`}
       >
         <h1
           key={slide.id}
           className={`showcase-text-enter hero-slide-headline font-heading font-bold uppercase leading-[1.05] tracking-[0.03em] sm:leading-[1.02] ${
-            isPrimarySlide
-              ? "whitespace-nowrap text-[clamp(0.85rem,3.6vw,3.25rem)] sm:text-[clamp(1.35rem,3.8vw,3.5rem)]"
-              : "text-[clamp(1.4rem,6.5vw,4.5rem)] sm:text-[clamp(2rem,5.5vw,4.5rem)]"
+            isPrimaryMultiLine
+              ? "text-center text-[clamp(0.85rem,3.2vw,2.75rem)] sm:text-[clamp(1.2rem,3.4vw,3rem)]"
+              : isPrimarySlide
+                ? "whitespace-nowrap text-[clamp(0.85rem,3.6vw,3.25rem)] sm:text-[clamp(1.35rem,3.8vw,3.5rem)]"
+              : slide.headline.position === "left"
+                ? "max-w-[min(100%,13rem)] text-[clamp(1.35rem,5.5vw,3.5rem)] sm:max-w-[min(42vw,20rem)] sm:text-[clamp(1.85rem,4.6vw,4rem)] lg:max-w-[min(38vw,22rem)] lg:text-[clamp(2rem,4vw,4.25rem)]"
+                : "text-[clamp(1.4rem,6.5vw,4.5rem)] sm:text-[clamp(2rem,5.5vw,4.5rem)]"
           } ${
             slide.headline.position === "left" ? "text-left" : "text-center"
           }`}
@@ -77,7 +82,9 @@ export default function VideoHero() {
           {slide.headline.lines.map((line) => (
             <span
               key={line.text}
-              className={`${isPrimarySlide ? "inline" : "block"} text-white`}
+              className={`${
+                isPrimarySlide && !isPrimaryMultiLine ? "inline" : "block"
+              } text-white`}
             >
               {line.text}
             </span>

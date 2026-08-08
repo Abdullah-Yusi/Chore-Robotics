@@ -1,7 +1,6 @@
 export const aboutPage = {
   intro: {
-    eyebrow: "About Us",
-    headline: "About Chore Robotics",
+    eyebrow: "About",
     address: "15 Hubble, Suite 200, Irvine, CA-92618",
   },
   missionVision: {
@@ -37,7 +36,7 @@ export const aboutPage = {
       paragraphs: [
         "Outdoor maintenance is broken.",
         "Property owners rely on multiple expensive machines for different jobs. Most are used only a few times a year, require skilled operators, and depend on a workforce that is becoming harder and more expensive to find.",
-        "We started Chore Robotics to replace that outdated model with one intelligent robotic platform that works autonomously, adapts to different tasks, and delivers reliable results every day.",
+        "We started Chore Robotics to replace that outdated model with a single, modular platform. One autonomous base that seamlessly swaps between heavy-duty seasonal attachments to deliver reliable results all year long.",
       ],
     },
     {
@@ -45,12 +44,12 @@ export const aboutPage = {
       chapter: "03",
       title: "What Makes Us Different",
       bullets: [
-        "Swap modules to adapt one platform to any seasonal task.",
-        "One intelligent system replaces a fleet of expensive machines.",
-        "Brushless direct-drive chassis delivers power for heavy-duty work.",
-        "Advanced navigation provides reliable awareness in real-world conditions.",
-        "Continuous software updates make every robot smarter over time.",
-        "We design and build all hardware and software in America.",
+        "100% American Made: Engineered, designed, and built entirely in the USA for uncompromising quality.",
+        "Modular Architecture: Swap modules instantly to adapt a single platform to any seasonal task.",
+        "Fleet Consolidation: One intelligent system replaces an entire fleet of expensive, single-use machines.",
+        "Direct-Drive Power: A brushless, gearless chassis delivers unyielding torque for heavy-duty work.",
+        "True Autonomy: Advanced navigation provides reliable, continuous awareness in unpredictable real-world conditions.",
+        "Over-the-Air Updates: Continuous software enhancements ensure every robot gets smarter over time.",
       ],
     },
     {
@@ -68,8 +67,8 @@ export const aboutPage = {
       chapter: "05",
       title: "Expanding the Platform",
       paragraphs: [
-        "Today, we are expanding our modular ecosystem so a single robot can conquer more industries.",
-        "From residential campuses and commercial airports to heavy-duty warehouses, every new attachment instantly multiplies your capabilities without the need to buy another machine.",
+        "We are expanding our modular ecosystem so a single robotic core can conquer multiple industries.",
+        "From sprawling corporate campuses and commercial airports to heavy-duty warehouses, every new attachment instantly multiplies your operational capabilities—without the capital expense of buying an entirely new machine.",
       ],
     },
     {

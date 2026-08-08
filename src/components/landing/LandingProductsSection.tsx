@@ -73,39 +73,9 @@ export default function LandingProductsSection() {
                     {product.description}
                   </p>
 
-                  <div className="mt-6 flex items-center justify-between border-t border-border pt-5">
-                    <span className="inline-flex items-center gap-2 font-body text-[11px] font-bold uppercase tracking-[0.14em] text-subtle transition-colors duration-300 group-hover:text-foreground">
+                  <div className="mt-6 border-t border-border pt-5">
+                    <span className="font-body text-[11px] font-bold uppercase tracking-[0.14em] text-subtle transition-colors duration-300 group-hover:text-foreground">
                       View Product
-                      <svg
-                        className="h-4 w-4 text-orange transition-transform duration-300 group-hover:translate-x-1"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        aria-hidden
-                      >
-                        <path
-                          d="M3 8h10M9 4l4 4-4 4"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-foreground/5 text-subtle transition-all duration-300 group-hover:border-orange/50 group-hover:bg-orange/10 group-hover:text-orange">
-                      <svg
-                        className="h-4 w-4"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        aria-hidden
-                      >
-                        <path
-                          d="M3 8h10M9 4l4 4-4 4"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
                     </span>
                   </div>
                 </div>

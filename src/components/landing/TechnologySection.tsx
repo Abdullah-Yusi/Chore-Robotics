@@ -29,6 +29,7 @@ export default function TechnologySection() {
           <MediaHeroBlock
             video={technologyPageHero.video}
             headline={technologyPageHero.headline}
+            description={technologyPageHero.description}
             ariaLabel="CHORE Ground Penetrating Radar mapping"
             compact
           />

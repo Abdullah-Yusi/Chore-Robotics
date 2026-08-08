@@ -9,14 +9,14 @@ export default function AboutHero() {
   return (
     <section
       ref={ref}
-      className={`border-b border-border bg-background px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-24 ${
+      className={`border-b border-border bg-background px-4 py-14 sm:px-6 sm:py-20 lg:px-10 lg:py-28 ${
         isVisible ? "reveal is-visible" : "reveal"
       }`}
     >
       <div className="mx-auto max-w-[1440px]">
-        <h1 className="font-heading text-[clamp(1.65rem,5vw,3.5rem)] font-semibold uppercase leading-[1.05] tracking-[0.04em] text-foreground sm:text-[clamp(2rem,5vw,3.5rem)]">
-          {aboutPage.intro.headline}
-        </h1>
+        <p className="text-center font-body text-xs font-bold uppercase tracking-[0.28em] text-[#ff8400] sm:text-sm">
+          {aboutPage.intro.eyebrow}
+        </p>
       </div>
     </section>
   );
